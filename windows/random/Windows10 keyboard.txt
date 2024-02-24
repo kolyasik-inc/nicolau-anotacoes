@@ -1,0 +1,4 @@
+Windows+Tab Open Task View.
+Windows+Ctrl+D Create a new virtual desktop.
+Windows+Ctrl+Left or Right Arrow Switch between virtual desktops.
+Windows+Ctrl+F4 Close the current virtual desktop.

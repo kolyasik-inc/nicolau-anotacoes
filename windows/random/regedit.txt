@@ -1,0 +1,56 @@
+# Reserva do processador para segundo plano.
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile (SystemResponsivenes\decimal =  10)
+
+# Atraso de exibição de menus.
+HKEY_CURRENT_USER\Control Panel\Desktop (MenuShowDelay = 0)
+
+# Velocidade do Mouse.
+HKEY_CURRENT_USER\Control Panel\Mouse (MouseSpeed = 2; MouseThreshold1 = 0; MouseThreshold2 = 0)
+
+# Memoria cache L2 (para obter o valor do SecondLevelDataCache usando o Programa CPU-Z depois busque no registro por essa chave em outros diretorios).
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management (SecondLevelDataCache\decimal = ???)
+
+# Desativa o fetch no disco aliviando o uso do mesmo
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters (EnablePrefetcher = 0; EnableSuperFetch = 0)
+
+# Limpa o cache de paginação ao desligar o PC
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management (ClearPageFileAtShutdown = 1)
+
+# Aumenta capacidade de recepiçao de dados web
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters (create new key DWORD 32bit with name IRPStackSize )(IRPStackSize = 50)
+
+# Define o tamanho do buffer de requisicao
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters (create new key DWORD 32bit with name SizReqBuf )( SizReqBuf = 95268 )
+
+# Aumenta numero de portas
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters (create new key DWORD 32 bit name MaxUserPort) ( MaxUserPort = 65534 )
+
+# Define tempo de resposta da internet
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters (create new key DWORD 32 bit name DefaultTTL) ( DefaultTTL = 100 )
+
+# Deixa o tcpip receber e negociar dados
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters ( TCP1323Opts = 1 )
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters {haxadecimal value} ( MaxFreeTcbs = 65536 ) para pcs antigos > ( MaxFreeTcbs = 16000 )
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters {haxadecimal value} ( MaxUserPort = 65534 ) para pcs antigos > ( MaxUserPort = 16000 )
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters {haxadecimal value} ( GlobalMaxTcpWindowSize = 65535 ) para pcs antigos > ( MaxUserPort = 16000 )
+
+# ir para o caminho no registro, rodar no cmd.exe "ipconfig" e checar o IP do adaptador e ver se e igual o das subchaves de registro
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\ 
+( MTU = 1470 ) # "ping -f -l 1475 192.168.18.1" ir checando ate parar de fragmentar e colocar o valor no MTU no meu caso 1470 ao invez de 1475
+( TcpAckFrequency = 1 )
+( TcpNoDelay = 1 )
+
+# Download falhando no navegador
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments ( ScanWithAntiVirus = 1 )
+
+# Desativar atualizacoes automaticas (caso nao tenha WindowsUpdate crie uma nova pasta "WindowsUpdate" e crie uma sub-pasta chamada "AU")
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU ( create new key DWORD 32 bit name NoAutoUpdate = 1 )
+
+# Desativar checagem de disco no startup do windows
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager ( BootExecute = autocheck autochk /k:C * )
+
+# To dual boot with Windows, it is recommended to configure Windows to use UTC, rather than Linux to use localtime.
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\ ( RealTimeIsUniversal = 1)

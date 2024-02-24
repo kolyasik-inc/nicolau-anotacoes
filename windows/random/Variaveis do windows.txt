@@ -1,0 +1,63 @@
+Variaveis de porcentagem para o CMD
+
+    %APPDATA%: caminho para a pasta de dados de aplicativos do usuário atual
+    %COMMONPROGRAMFILES%: caminho para a pasta de arquivos de programas comuns
+    %COMMONPROGRAMFILES(X86)%: caminho para a pasta de arquivos de programas comuns em sistemas de 64 bits
+    %COMPUTERNAME%: nome do computador
+    %COMSPEC%: caminho para o shell de comando do Windows (geralmente C:\Windows\System32\cmd.exe)
+    %HOMEDRIVE%: letra da unidade de disco rígido do diretório inicial do usuário
+    %HOMEPATH%: caminho para o diretório inicial do usuário
+    %LOCALAPPDATA%: caminho para a pasta de dados de aplicativos locais do usuário atual
+    %LOGONSERVER%: nome do servidor de autenticação de logon
+    %NUMBER_OF_PROCESSORS%: número de processadores lógicos no sistema
+    %OS%: nome do sistema operacional
+    %PROCESSOR_ARCHITECTURE%: arquitetura do processador (x86 ou x64)
+    %PROCESSOR_IDENTIFIER%: identificador do processador
+    %PROCESSOR_LEVEL%: nível do processador
+    %PROCESSOR_REVISION%: revisão do processador
+    %PROGRAMDATA%: caminho para a pasta de dados de programas compartilhados
+    %PROGRAMFILES%: caminho para a pasta de arquivos de programas instalados
+    %PROGRAMFILES(X86)%: caminho para a pasta de arquivos de programas instalados em sistemas de 64 bits
+    %PROMPT%: formato de prompt do shell de comando do Windows
+    %PSModulePath%: caminho para os módulos do PowerShell
+    %PUBLIC%: caminho para a pasta pública do sistema
+    %SESSIONNAME%: nome da sessão de logon
+    %SYSTEMDRIVE%: letra da unidade de disco rígido do sistema
+    %SYSTEMROOT%: caminho para a pasta raiz do sistema do Windows (geralmente C:\Windows)
+    %TEMP% ou %TMP%: caminho para a pasta temporária do sistema
+    %USERDOMAIN%: nome do domínio do usuário atual
+    %USERNAME%: nome do usuário atual
+    %USERPROFILE%: caminho para a pasta do perfil do usuário atual
+    %WINDIR%: caminho para a pasta do sistema operacional Windows (geralmente C:\Windows)
+
+Variaveis de $Env: para o Powershell
+
+    $Env:APPDATA: caminho para a pasta de dados de aplicativos do usuário atual
+    $Env:COMMONPROGRAMFILES: caminho para a pasta de arquivos de programas comuns
+    $Env:COMMONPROGRAMFILES(X86): caminho para a pasta de arquivos de programas comuns em sistemas de 64 bits
+    $Env:COMPUTERNAME: nome do computador
+    $Env:COMSPEC: caminho para o shell de comando do Windows (geralmente C:\Windows\System32\cmd.exe)
+    $Env:HOMEDRIVE: letra da unidade de disco rígido do diretório inicial do usuário
+    $Env:HOMEPATH: caminho para o diretório inicial do usuário
+    $Env:LOCALAPPDATA: caminho para a pasta de dados de aplicativos locais do usuário atual
+    $Env:LOGONSERVER: nome do servidor de autenticação de logon
+    $Env:NUMBER_OF_PROCESSORS: número de processadores lógicos no sistema
+    $Env:OS: nome do sistema operacional
+    $Env:PROCESSOR_ARCHITECTURE: arquitetura do processador (x86 ou x64)
+    $Env:PROCESSOR_IDENTIFIER: identificador do processador
+    $Env:PROCESSOR_LEVEL: nível do processador
+    $Env:PROCESSOR_REVISION: revisão do processador
+    $Env:PROGRAMDATA: caminho para a pasta de dados de programas compartilhados
+    $Env:PROGRAMFILES: caminho para a pasta de arquivos de programas instalados
+    $Env:PROGRAMFILES(X86): caminho para a pasta de arquivos de programas instalados em sistemas de 64 bits
+    $Env:PROMPT: formato de prompt do shell de comando do Windows
+    $Env:PSModulePath: caminho para os módulos do PowerShell
+    $Env:PUBLIC: caminho para a pasta pública do sistema
+    $Env:SESSIONNAME: nome da sessão de logon
+    $Env:SYSTEMDRIVE: letra da unidade de disco rígido do sistema
+    $Env:SYSTEMROOT: caminho para a pasta raiz do sistema do Windows (geralmente C:\Windows)
+    $Env:TEMP ou $Env:TMP: caminho para a pasta temporária do sistema
+    $Env:USERDOMAIN: nome do domínio do usuário atual
+    $Env:USERNAME: nome do usuário atual
+    $Env:USERPROFILE: caminho para a pasta do perfil do usuário atual
+    $Env:WINDIR: caminho para a pasta do sistema operacional Windows (geralmente C:\Windows)

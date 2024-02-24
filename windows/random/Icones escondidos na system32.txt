@@ -1,0 +1,55 @@
+    As DLLs da pasta System32 contêm vários tipos de ícones, incluindo ícones de aplicativos, pastas, arquivos, dispositivos, recursos de sistema e muito mais. A seguir, uma breve descrição dos tipos de ícones que podem ser encontrados em algumas das DLLs listadas:
+
+    imageres.dll: contém ícones de vários tamanhos e resoluções para aplicativos do Windows e recursos do sistema.
+
+    shell32.dll: contém ícones de arquivos, pastas, aplicativos, dispositivos e recursos do sistema.
+
+    pifmgr.dll: contém ícones de atalhos para aplicativos MS-DOS.
+
+    explorer.exe: contém ícones de arquivos, pastas e aplicativos usados ​​pelo Windows Explorer.
+
+    accessibilitycpl.dll: contém ícones relacionados a recursos de acessibilidade do sistema.
+
+    moricons.dll: contém ícones de recursos comuns do sistema, como botões de fechar, minimizar e maximizar.
+
+    mmcndmgr.dll: contém ícones usados ​​pelo Gerenciador de Dispositivos e pelo Gerenciador de Computador.
+
+    mmres.dll: contém ícones relacionados a áudio e vídeo.
+
+    netcenter.dll e netshell.dll: contêm ícones relacionados a recursos de rede, como dispositivos, conexões e configurações.
+
+    pnidui.dll: contém ícones relacionados a dispositivos de rede e conexões.
+
+    sensorscpl.dll: contém ícones relacionados a sensores de hardware, como acelerômetros e giroscópios.
+
+    setupapi.dll: contém ícones relacionados a instalação e configuração de dispositivos de hardware.
+
+    wmploc.dll: contém ícones relacionados a recursos de áudio e vídeo usados ​​pelo Windows Media Player.
+
+    wpdshext.dll: contém ícones relacionados a dispositivos portáteis, como smartphones e tablets.
+
+    compstui.dll: contém ícones relacionados a recursos de impressão e gerenciamento de impressoras.
+
+    ieframe.dll: contém ícones relacionados a recursos do Internet Explorer, como botões e barras de ferramentas.
+
+    mstscax.dll e mstsc.exe: contêm ícones relacionados a recursos de conexão remota e área de trabalho remota.
+
+    dsuiext.dll: contém ícones relacionados a recursos de diretório ativo.
+
+    wiashext.dll: contém ícones relacionados a recursos de câmera e scanner.
+
+    actioncentercpl.dll: Contém ícones relacionados ao Centro de Ações do Windows, que é uma ferramenta de notificação e configuração do sistema operacional.
+
+    aclui.dll: Contém ícones relacionados ao controle de acesso de usuário e gerenciamento de contas de usuário.
+
+    autoplay.dll: Contém ícones relacionados à reprodução automática de mídia, como CD, DVD e dispositivos USB.
+
+    comctl32.dll: Contém ícones de controle comuns do Windows, como botões, barras de rolagem e janelas.
+
+    filemgmt.dll: Contém ícones relacionados à gerência de arquivos e pastas no sistema operacional.
+
+    ncpa.cpl: Contém ícones relacionados às configurações de rede e acesso a dispositivos de rede.
+
+    url.dll: Contém ícones relacionados ao gerenciamento de URLs e protocolos de internet.
+
+    xwizards.dll: Contém ícones relacionados a assistentes de configuração e personalização do sistema operacional.

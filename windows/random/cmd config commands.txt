@@ -1,0 +1,71 @@
+# Politica de execucao de scripts
+Set-ExecutionPolicy -ExecutionPolicy Undefined
+Set-Executionpolicy Remotesigned
+Set-ExecutionPolicy Unrestricted
+
+# criar pendrive bootavel
+diskpart
+list disk
+select disk X
+clean
+create partition primary
+select partition X
+format fs=ntfs quick
+list vol 
+select vol X
+assign letter=X
+exit
+
+# converter disco 
+diskpart
+list disk 
+select disk X
+clean
+convert gpt
+
+# desativar hibernacao
+powercfg.exe /hibernate off 
+
+# desativar analise de disco
+chkntfs C: /x
+
+# analise de disco
+chkdsk /f /r
+sfc /scannow /offbootdir=c:\ /offwindir=c:\
+dism /online /cleanup-image /restorehealth
+
+# recuperaçao de disco corrompido
+bcedit /rebuildbcd
+bcedit /export c:\bcd backup
+ren c:\boot\bcd bcd.old
+bootrec /fixmbr
+bootrec /fixboot
+
+# reparo na conecçao de rede
+ipconfig /flushdns
+ipconfig /registerdns
+ipconfig /release
+ipconfig /renew
+nbtstat -rr
+netsh winsock reset
+netsh int ip reset all
+
+# ping da morte
+ping -t (ip) -l 000 -n 000 -w 000
+
+# senhas wi-fi
+netsh wlan export profile folder=c:\ key=clear
+
+# opçoes para aumentar ping (perigo pode causar falha no windows update)
+netsh int tcp set heuristics disabled
+netsh int tcp set global autotuninglevel=disabled
+netsh int tcp set global dca=enabled
+netsh int tcp set global rss=enabled
+netsh int tcp set global timestamps=disabled
+
+# resetar icones sumidos
+taskkill /F /IM explorer.exe
+cd /d %userprofile%\AppData\Local
+attrib -h IconCache.db
+del IconCache.db
+start explorer.exe

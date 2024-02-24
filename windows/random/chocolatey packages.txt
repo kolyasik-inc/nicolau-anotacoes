@@ -1,0 +1,142 @@
+choco install -y choco-cleaner clink starship powershell-core microsoft-windows-terminal powertoys dotnet dotnetfx cygwin msys2  apache-httpd php mariadb mongodb.core clisp strawberryperl lua python nodejs rust ruby golang erlang elixir jre8 oraclejdk directx vcredist-all xna firacodenf nerdfont-hack cpu-z hwmonitor crystaldiskinfo jcpicker autoclicker capture2text imgburn virtualclonedrive rufus etcher ventoy openvpn radmin-vpn hamachi wireshark  qbittorrent 7zip neovim notepadplusplus vscode firefox ungoogled-chromium miktex calibre pandoc okular goldendict libreoffice-fresh freemind scratch vlc audacious irfanview gimp inkscape darktable blender discord hexchat audacity audacity-ffmpeg handbrake spek ffmpeg-full mixxx lmms droidcamclient obs-studio kdenlive krita virtualbox bulk-crap-uninstaller
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+Commands
+apikey - retrieves, saves or deletes an apikey for a particular source
+config - Retrieve and configure config file settings
+convert - converts packages from one type to another type
+download - downloads packages - optionally internalizing all remote resources
+export - exports list of currently installed packages
+feature - view and configure choco features
+features - view and configure choco features (alias for feature)
+find - searches remote or local packages (alias for search)
+help - displays top level help information for choco
+info - retrieves package information. Shorthand for choco search pkgname --exact --verbose
+install - installs packages from various sources
+list - lists remote or local packages
+new - generates files necessary for a chocolatey package from a template
+optimize - optimizes installation, reducing space usage
+outdated - retrieves packages that are outdated. Similar to upgrade all --noop
+pack - packages nuspec, scripts, and other Chocolatey package resources into a nupkg file
+pin - suppress upgrades for a package
+push - pushes a compiled nupkg or intunewin file to a source
+search - searches remote or local packages (alias for list)
+setapikey - retrieves, saves or deletes an apikey for a particular source (alias for apikey)
+source - view and configure default sources
+sources - view and configure default sources (alias for source)
+support - provides support information
+sync - synchronizes against system installed software - generates missing packages
+synchronize - synchronizes against system installed software - generates missing packages
+template - get information about installed templates
+templates - get information about installed templates (alias for template)
+uninstall - uninstalls a package
+unpackself - re-installs Chocolatey base files
+upgrade - upgrades packages from various sources
+Please run chocolatey with choco command -help for specific help on each command.
+
+--ignore-checksums - skips checksumming
+--allow-empty-checksums - skips checksumming when the package is missing a checksum
+
+-?, --help, -h
+     Prints out the help menu.
+
+ -d, --debug
+     Debug - Show debug messaging.
+
+ -v, --verbose
+     Verbose - Show verbose messaging. Very verbose messaging, avoid using 
+       under normal circumstances.
+
+     --trace
+     Trace - Show trace messaging. Very, very verbose trace messaging. Avoid 
+       except when needing super low-level .NET Framework debugging. Available 
+       in 0.10.4+.
+
+     --nocolor, --no-color
+     No Color - Do not show colorization in logging output. This overrides 
+       the feature 'logWithoutColor', set to 'False'. Available in 0.10.9+.
+
+     --acceptlicense, --accept-license
+     AcceptLicense - Accept license dialogs automatically. Reserved for 
+       future use.
+
+ -y, --yes, --confirm
+     Confirm all prompts - Chooses affirmative answer instead of prompting. 
+       Implies --accept-license
+
+ -f, --force
+     Force - force the behavior. Do not use force during normal operation - 
+       it subverts some of the smart behavior for commands.
+
+     --noop, --whatif, --what-if
+     NoOp / WhatIf - Don't actually do anything.
+
+ -r, --limitoutput, --limit-output
+     LimitOutput - Limit the output to essential information
+
+     --timeout, --execution-timeout=VALUE
+     CommandExecutionTimeout (in seconds) - The time to allow a command to 
+       finish before timing out. Overrides the default execution timeout in the 
+       configuration of 2700 seconds. '0' for infinite starting in 0.10.4.
+
+ -c, --cache, --cachelocation, --cache-location=VALUE
+     CacheLocation - Location for download cache, defaults to %TEMP% or value 
+       in chocolatey.config file.
+
+     --allowunofficial, --allow-unofficial, --allowunofficialbuild, --allow-unofficial-build
+     AllowUnofficialBuild - When not using the official build you must set 
+       this flag for choco to continue.
+
+     --failstderr, --failonstderr, --fail-on-stderr, --fail-on-standard-error, --fail-on-error-output
+     FailOnStandardError - Fail on standard error output (stderr), typically 
+       received when running external commands during install providers. This 
+       overrides the feature failOnStandardError.
+
+     --use-system-powershell
+     UseSystemPowerShell - Execute PowerShell using an external process 
+       instead of the built-in PowerShell host. Should only be used when 
+       internal host is failing. Available in 0.9.10+.
+
+     --no-progress
+     Do Not Show Progress - Do not show download progress percentages. 
+       Available in 0.10.4+.
+
+     --proxy=VALUE
+     Proxy Location - Explicit proxy location. Overrides the default proxy 
+       location of ''. Available for config settings in 0.9.9.9+, this CLI 
+       option available in 0.10.4+.
+
+     --proxy-user=VALUE
+     Proxy User Name - Explicit proxy user (optional). Requires explicit 
+       proxy (`--proxy` or config setting). Overrides the default proxy user of 
+       ''. Available for config settings in 0.9.9.9+, this CLI option available 
+       in 0.10.4+.
+
+     --proxy-password=VALUE
+     Proxy Password - Explicit proxy password (optional) to be used with 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
+       available in 0.10.4+.
+
+     --proxy-bypass-list=VALUE
+     ProxyBypassList - Comma separated list of regex locations to bypass on 
+       proxy. Requires explicit proxy (`--proxy` or config setting). Overrides 
+       the default proxy bypass list of ''. Available in 0.10.4+.
+
+     --proxy-bypass-on-local
+     Proxy Bypass On Local - Bypass proxy for local connections. Requires 
+       explicit proxy (`--proxy` or config setting). Overrides the default 
+       proxy bypass on local setting of 'True'. Available in 0.10.4+.
+
+     --log-file=VALUE
+     Log File to output to in addition to regular loggers. Available in 0.1-
+       0.8+.
+
+     --skipcompatibilitychecks, --skip-compatibility-checks
+     SkipCompatibilityChecks - Prevent warnings being shown before and after 
+       command execution when a runtime compatibility problem is found between 
+       the version of Chocolatey and the Chocolatey Licensed Extension. 
+       Available in 1.1.0+

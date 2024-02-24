@@ -1,0 +1,97 @@
+Comandos básicos:
+
+    @echo: exibe um texto na tela;
+    echo: exibe um texto na tela;
+    set: define uma variável de ambiente;
+    cd: muda o diretório atual;
+    dir: exibe o conteúdo de um diretório;
+    copy: copia um arquivo;
+    move: move um arquivo;
+    del: exclui um arquivo;
+    if: condicional;
+    goto: pula para uma outra seção do script.
+
+Comandos avançados:
+
+    for: cria um loop para executar um comando em uma lista de arquivos ou pastas;
+    call: chama outro script dentro do script atual;
+    setlocal e endlocal: permite definir variáveis de ambiente temporárias;
+    pushd e popd: permite alternar entre diretórios;
+    find: encontra uma linha em um arquivo de texto;
+    findstr: encontra uma string em um arquivo de texto;
+    xcopy: copia diretórios e subdiretórios;
+    robocopy: cópia de arquivos com recursos avançados, como verificação de dados;
+    choice: permite ao usuário escolher uma opção de um menu.
+
+Todos comandos batch CMD
+
+    ASSOC: Exibe ou modifica as associações de extensão de arquivo.
+    ATTRIB: Exibe ou altera os atributos de um arquivo ou diretório.
+    BREAK: Controla a interrupção de um processamento de lote.
+    CALL: Chama um segundo arquivo em lote a partir de dentro do primeiro.
+    CD (ou CHDIR): Muda o diretório atual.
+    CHCP: Mostra ou altera o número da página de código ativa.
+    CLS: Limpa a tela do console.
+    COLOR: Define as cores padrão do primeiro plano e do plano de fundo para o console.
+    COMP: Compara o conteúdo de dois arquivos ou conjuntos de arquivos.
+    COMPACT: Exibe ou altera a compressão de arquivos em partições NTFS.
+    CONVERT: Converte volumes FAT em NTFS.
+    COPY: Copia um ou mais arquivos para outro local.
+    DATE: Mostra ou define a data.
+    DEL (ou ERASE): Exclui um ou mais arquivos.
+    DIR: Exibe uma lista de arquivos e subdiretórios em um diretório.
+    DISKCOMP: Compara o conteúdo de dois disquetes.
+    DISKCOPY: Copia o conteúdo de um disquete para outro.
+    ECHO: Exibe mensagens ou ativa ou desativa a exibição do comando.
+    ENDLOCAL: Termina a localização de variáveis de ambiente em um arquivo em lote.
+    ERASE (ou DEL): Exclui um ou mais arquivos.
+    EXIT: Encerra o processamento do arquivo em lote.
+    FC: Compara dois arquivos ou conjuntos de arquivos e exibe as diferenças entre eles.
+    FIND: Procura por uma string em um ou mais arquivos.
+    FINDSTR: Procura por uma string em um ou mais arquivos.
+    FOR: Executa um comando para cada item em um conjunto de arquivos.
+    FORMAT: Formata um disco para uso com o Windows.
+    FSUTIL: Realiza tarefas de gerenciamento de arquivos e sistema de arquivos.
+    GOTO: Direciona o processamento para um rótulo identificado em um arquivo em lote.
+    GRAFTABL: Permite que o Windows exiba um conjunto de caracteres estendidos em gráficos de terminal.
+    HELP: Fornece informações de ajuda sobre comandos do Windows.
+    IF: Realiza uma operação condicional em arquivos.
+    LABEL: Cria, altera ou exclui o rótulo de um volume.
+    MD (ou MKDIR): Cria um diretório.
+    MKDIR (ou MD): Cria um diretório.
+    MKLINK: Cria um link simbólico ou um link físico.
+    MODE: Configura um dispositivo de sistema.
+    MORE: Exibe a saída de um comando em uma tela por vez.
+    MOVE: Move um ou mais arquivos de um diretório para outro.
+    PATH: exibe ou define o caminho de pesquisa do sistema para executáveis de comandos.
+    PAUSE: pausa a execução do script e exibe a mensagem "Pressione qualquer tecla para continuar...".
+    POPD: remove o diretório atual da lista de diretórios (stack) e define o diretório anterior como o atual.
+    PRINT: imprime um arquivo de texto para uma impressora especificada.
+    PROMPT: exibe ou define o prompt de comando do sistema.
+    PUSHD: adiciona o diretório atual à lista de diretórios (stack) e define o diretório especificado como o atual.
+    RD (ou RMDIR): remove um diretório.
+    REM: insere um comentário em um arquivo em lotes.
+    REN (ou RENAME): renomeia um arquivo ou diretório.
+    REPLACE: substitui arquivos.
+    ROBOCOPY: cópia avançada de arquivos e diretórios.
+    SET: exibe, define ou remove variáveis de ambiente.
+    SETLOCAL: cria um ambiente de variáveis de ambiente local no script.
+    SC: gerencia serviços do sistema.
+    SCHTASKS: agenda tarefas no sistema.
+    SHIFT: desloca os parâmetros de comando em um arquivo em lotes.
+    SHUTDOWN: desliga ou reinicia o sistema local ou remoto.
+    SORT: ordena linhas de texto.
+    START: inicia um aplicativo ou processo em uma nova janela.
+    SUBST: atribui uma unidade a um caminho de diretório.
+    SYSTEMINFO: exibe informações detalhadas sobre a configuração do sistema.
+    TASKKILL: encerra um processo ou um conjunto de processos especificados.
+    TASKLIST: exibe uma lista de processos em execução.
+    TIME: exibe ou define a hora do sistema.
+    TITLE: exibe ou define o título da janela do console.
+    TREE: exibe a estrutura em árvore de diretórios e subdiretórios.
+    TYPE: exibe o conteúdo de um arquivo de texto.
+    VER: exibe a versão do sistema operacional.
+    VERIFY: verifica se os arquivos foram gravados corretamente em um disco.
+    VOL: exibe o rótulo e o número de série de um disco.
+    XCOPY: copia arquivos e diretórios, incluindo subdiretórios.
+

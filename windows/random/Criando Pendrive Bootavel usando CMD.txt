@@ -1,0 +1,16 @@
+# Criando pendrive bootavel no CMD
+
+diskpart
+list disk
+select disk (numero do disco)
+clean
+create part pri
+select part 1
+active
+# Para sistemas novos que suportam UEFI
+format fs=fat32 quick
+# Para sistemas antigos que nao suportao UEFI
+format fs=ntfs quick
+exit
+
+#depois so mover o ISO para o pendrive

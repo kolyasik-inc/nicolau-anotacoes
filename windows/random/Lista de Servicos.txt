@@ -1,0 +1,57 @@
+LISTA DE SERVIÇOS QUE VOCÊ PODE DESABILITAR NO WINDOWS 7/8/10:
+
+dmwappushservice = Serviço que funciona como uma espécie de keylogger capaz de coletar todas as informações faladas, digitadas e escritas à tinta no Windows 10, principalmente quando se faz uso da Cortana no sistema. O serviço também pode coletar informações em seu Calendário e seus contatos. 
+
+Cliente de rastreamento de link distribuído = Gerencia a coleta de dados no Windows 10 quando o sistema está configurado pra enviar dados básicos do mesmo para a Microsoft. Embora o programa Spybot Antibeacon desative completamente a coleta de dados do sistema, é sempre bom desativar manualmente este serviço.
+
+Superfetch: Mantém e aprimora o desempenho do sistema com o passar do tempo, porém pode causar travamentos no HD em alguns computadores ( Caso ele continuar em execução mesmo desativando pelo Regedit, experimente desativar o seu serviço também ). 
+
+Serviço de entrada do Tablet PC (no Windows 7) / Touch Keyboard e Handwriting Panel Service (Windows 8): você pode desabilitar com segurança este serviço, a menos que você use Tablet PC. 
+
+Hora do Windows: se o seu computador não tiver acesso à Internet, não precisa atualizar o sistema dos servidores online. Você pode desabilitar com segurança este serviço.
+
+Logon secundário: se você é o único usuário do seu computador, ele pode ser desativado. Mas somente se você não pretende usar mais de uma conta de usuário. 
+
+Fax: a menos que você use seu computador para enviar ou receber faxes usando recursos de fax em seu sistema (por exemplo, usando um fax-modem), você pode desativá-lo. 
+
+Spooler de impressão: se você não possui uma impressora conectada ao seu computador e você não usa impressoras virtuais (por exemplo, criador de PDF, Microsoft XPS Document Writer, Snagit, etc.), você pode desativá-lo. 
+
+Arquivos off-line: se você usar o recurso Arquivos off-line do Windows, você pode desativá-lo. 
+
+
+Serviço de Roteamento e Acesso Remoto: Este serviço oferece serviços de roteamento para empresas em áreas locais e redes de área ampla. Permite que os computadores liguem para o computador local para obter acesso à rede local. Em um computador doméstico, você não precisará desses recursos. 
+
+
+Serviço de suporte Bluetooth: a menos que você use dispositivos Bluetooth, como teclados, ratos, impressoras ou telefones, você pode desativar esse serviço. Tenha em mente que, se você optar por desativar esse serviço, nenhum dispositivo Bluetooth será reconhecido. Além disso, os dispositivos Bluetooth já conectados podem não funcionar corretamente.
+
+
+Serviço de criptografia de unidade BitLocker: se você não usa o Software de criptografia da Microsoft, você pode desativar esse serviço. O BitLocker Drive Encryption é um recurso que permite aos usuários protegerem seus dados criptografando o sistema.
+
+Sistema de arquivos de criptografia: o EFS fornece tecnologia de criptografia de arquivos para armazenar arquivos criptografados em sistemas de arquivos NTFS. Se você não precisa criptografar dados em seus discos rígidos, pode desativá-lo. 
+
+Propagação do Certificado: Se você não usa o SmartCards (às vezes usado em grandes organizações), é seguro desabilitar esse serviço.
+
+
+Serviço iniciador iSCSI da Microsoft: o iSCSI é uma abreviatura da Internet Small Computer System Interface - um padrão de rede de armazenamento baseado em IP para ligar instalações de armazenamento de dados. Permite aos computadores clientes acessar dados em longas distâncias em centros de dados remotos, usando a infra-estrutura existente (por exemplo, por LAN, Internet). Os dispositivos ISCSI são discos, fitas, CDs e outros dispositivos de armazenamento em outro computador em rede com o qual você pode se conectar. Às vezes, esses dispositivos de armazenamento fazem parte de uma rede chamada rede de área de armazenamento (SAN). A menos que você precise se conectar a dispositivos iSCSI, é seguro desativar esse serviço. 
+
+
+Netlogon: este serviço não é necessário em um computador doméstico. Ele mantém um canal seguro entre o computador local e o controlador de domínio para autenticar usuários. A menos que você se conecte a um domínio de rede, este serviço nunca será usado. 
+
+Controles parentais (no Windows 7) / Segurança familiar (no Windows 8): a menos que você tenha filhos usando seu computador e que você deseja monitorar e controlar suas atividades, esse serviço não é necessário. 
+
+
+Configuração da Área de Trabalho Remota: Remote Desktop Protocol é um protocolo desenvolvido pela Microsoft que fornece aos usuários do Windows uma interface gráfica para outro computador. O cliente usado pela Microsoft é chamado de Conexão de Área de Trabalho Remota. Se você não precisa se conectar remotamente a outro computador ou permitir conexões remotas recebidas para o seu, então é seguro desativar esse serviço.
+
+
+Serviços de Área de Trabalho Remota: o mesmo que acima.
+
+
+Redirecionador de porta de usuário do Remote Desktop Services: igual à acima. 
+
+
+Cartão inteligente: os cartões inteligentes geralmente são usados ??por razões de segurança em grandes organizações ou corporações. O usuário doméstico típico provavelmente não precisará que este serviço seja executado. 
+
+
+Política de remoção de cartão inteligente: o mesmo acima.
+
+Windows Connect Now: Este serviço é usado por laptops e outros computadores móveis para se conectar a redes sem fio. Se você estiver em um computador desktop, você pode desativar esse serviço.
