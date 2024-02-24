@@ -1,0 +1,5 @@
+#Arch developer's packages 
+$ pacman -S apache aria2 assimp atop autoconf automake axel base-devel bat binutils bison clang cmake ctop curl dos2unix dust emacs exa fakeroot fd file findutils flex fpc htop git gawk gcc gettext grep grex groff gzip inetutils libtool links lynx m4 make nano parallel patch patchutils pkgconf procs sd sed sudo tealdeer texinfo tokei tmux tree vim vifm w3m wget which xdotool zenity
+
+#MSYS2 developer's packages
+$ pacman -S autoconf automake axel binutils base-devel bison clang cmake curl dos2unix emacs file findutils flex git gawk gcc gettext grep groff gzip inetutils libtool m4 make nano parallel patch patchutils pkgconf sed texinfo tmux tree vim vifm w3m wget which

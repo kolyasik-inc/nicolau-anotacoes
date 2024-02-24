@@ -1,0 +1,83 @@
+-vi Editor “Cheat Sheet”
+
+Invoking vi: 			vi filename
+Format of vi commands:		[count][command] (count repeats the effect of the command)
+
+-Command mode versus input mode
+Vi starts in command mode. The positioning commands
+operate only while vi is in command mode. You switch vi
+to input mode by entering any one of several vi input commands. (See next section.) Once  in input mode, any character you type is taken to be text and is added to the file. You
+cannot execute any commands until you exit input mode.
+To exit input mode, press the escape (Esc) key
+
+-Input commands (end with Esc)
+
+a	Append after cursor
+i	Insert before cursor
+o	Open line below
+O	Open line above
+:r	file Insert file after current line
+
+-Any of these commands leaves vi in input mode until you
+press Esc. Pressing the RETURN key will not take you out
+of input mode
+
+-Change commands (Input mode)
+
+cw		Change word (Esc)
+cc	Change line (Esc) - blanks line
+c$	Change to end of line
+rc	Replace character with c
+R	Replace (Esc) - typeover
+s	Substitute (Esc) - 1 char with string
+S	Substitute (Esc) - Rest of line with text
+.	Repeat last change
+
+-Changes during insert mode
+
+<ctrl>h		Back one character
+<ctrl>w		Back one word
+<ctrl>u		Back to beginning of insert
+
+File management commands
+:w name Write edit buffer to file name
+:wq Write to file and quit
+:q! Quit without saving changes
+ZZ Same as :wq
+:sh Execute shell commands (<ctrl>d)
+
+-Window motions
+
+<ctrl>d		Scroll down (half a screen)
+<ctrl>u		Scroll up (half a screen)
+<ctrl>f		Page forward
+<ctrl>b		Page backward
+/string		Search forward
+?string		Search backward
+<ctrl>l		Redraw screen
+<ctrl>g		Display current line number and file information
+n		Repeat search
+N		Repeat search reverse
+G		Go to last line
+nG		Go to line n
+:n		Go to line n
+z<CR>		Reposition window: cursor at top
+z.		Reposition window: cursor in middle
+z-		Reposition window: cursor at bottom
+
+-Cursor motions
+
+H	Upper left corner (home)
+M	Middle line
+L	Lower left corner
+h	Back a character
+j	Down a line
+k	Up a line
+^	Beginning of line
+$	End of line
+l	Forward a character
+w	One word forward
+b	Back one word
+fc	Find c
+;	Repeat find (find next c)
+

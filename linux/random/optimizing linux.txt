@@ -1,0 +1,33 @@
+# So you want to configure the OS to more aggressively keep your application state in RAM, and this
+sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
+vm.swappiness=1
+vm.vfs_cache_pressure=50
+EOF
+
+# Your machine become unresponsive when dealing with slower storage
+sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
+vm.dirty_background_bytes=16777216
+vm.dirty_bytes=50331648
+EOF
+
+# If you don't want to reboot right now, you can run this in a Terminal:
+sudo sysctl -w vm.swappiness=1
+sudo sysctl -w vm.vfs_cache_pressure=50
+sudo sysctl -w vm.dirty_background_bytes=16777216 
+sudo sysctl -w vm.dirty_bytes=50331648
+
+# Arch linux kernel
+sudo pacman -Sy linux-zen
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+-------Liquorix Kernel--------------------
+# Debian prerequisites
+curl 'https://liquorix.net/add-liquorix-repo.sh' | sudo bash
+
+# Ubuntu prerequisites
+sudo add-apt-repository ppa:damentz/liquorix && sudo apt-get update
+
+# Liquorix kenel
+sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+
+-------------------------------------------

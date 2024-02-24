@@ -1,0 +1,47 @@
+alias setup-disk="ROOTFS=btrfs BOOTLOADER=grub USE_EFI=0 SWAP_SIZE=0 setup-disk"
+
+alias setup-alpine="DISKOPTS="-m sys /mnt/" setup-alpine"
+
+adduser -g ¨Complete Name Of User¨ username
+
+adduser username wheel
+
+apk add doas vim
+
+vim /etc/doas.conf
+(permit persist :wheel)
+
+# uncomment stable comunity repository
+vim /etc/apk/repositories
+
+apk update
+
+apk upgrade --avaliable
+
+setup-xorg-base
+
+apk add xfce4 xfce4-terminal xfce4-screensaver lightdm-gtk-greeter dbus adwaita-icon-theme
+
+rc-update add lightdm
+
+apk add xsel xclip i3wm-gaps dmenu rofi picom lxappearance arandr xfce4-terminal dbus flameshot bash-completion
+
+rc-update add dbus
+
+apk add elogind polkit-elogind
+
+reboot
+
+# Pulseaudio
+apk add pulseaudio pulseaudio-alsa alsa-plugins-pulse alsa-utils alsa-lib alsa-conf
+
+# Alsa
+apk add alsa-utils alsa-lib alsaconf alsa-ucm-conf
+addgroup $USER audio
+addgroup root audio
+alsamixer
+rc-update add alsa
+
+apk add alpine-sdk coreutils util-linux pciutils iputils
+
+apk add firefox code-oss

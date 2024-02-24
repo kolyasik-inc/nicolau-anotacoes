@@ -1,0 +1,15 @@
+# In Ubuntu OS
+
+$ sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+$ sudo pkill 'VBoxClient --clipboard' -f & sleep 1 && VBoxClient --clipboard
+$ sudo VBoxClient --clipboard
+$ sudo VBoxClient-all
+$ /usr/bin/VBoxClient-all
+
+$ sudo apt install build-essential dkms linux-headers-$(uname -r)
+
+# In Arch OS
+
+$ sudo pacman -S virtualbox-guest-utils
+$ sudo systemctl enable vboxservice.service
+$ sudo systemctl start vboxservice.service

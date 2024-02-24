@@ -1,0 +1,54 @@
+It is possible to use a swap file on btrfs, but there are some considerations that need taking care of.
+
+btrfs filesystem doesn't let to create snapshots if there is a working swap file on the subvolume. That means that it is highly recommended to place a swap file on a separate subvolume.
+
+Lets assume that the current swap is already off, the / is on /dev/sda1 and Ubuntu is installed with / on @ subvolume and /home is on @home subvolume.
+
+# Mount /dev/sda1 to /mnt.
+$ sudo mount /dev/sda2 /mnt
+
+# If you run ls /mnt, you'll see @, @home and other subvolumes that may be there.
+# Create a new @swap subvolume.
+$ sudo btrfs sub create /mnt/@swap
+
+# Unmount /dev/sda1 from /mnt
+$ sudo umount /mnt
+
+# Create /swap directory where we plan to mount the @swap subvolume.
+$ sudo mkdir /mnt/swap
+
+# Mount the @swap subvolume to /swap.
+$ sudo mount -o subvol=@swap /dev/sda2 /mnt/swap
+
+# Set the appropriate permissions on the swap subvolume so that only the owner, the root user in this case, has access to the subvolume.
+$ sudo chmod 700 /mnt/swap
+
+# Create the swap file.
+$ sudo touch /mnt/swap/swapfile
+
+# set 600 permissions to the file.
+$ sudo chmod 600 /mnt/swap/swapfile
+
+# Disable COW for this file.
+$ sudo chattr +C /mnt/swap/swapfile
+
+# Make sure to disable compression on the swapfile.
+$ sudo btrfs property set /mnt/swap/swapfile compression none
+
+# Set size of the swap file to 4G as an example.
+$ sudo dd if=/dev/zero of=/mnt/swap/swapfile bs=1M count=4096
+
+# Format the swapfile
+$ sudo mkswap /mnt/swap/swapfile
+
+# Turn the swap file on.
+$ sudo swapon /mnt/swap/swapfile
+
+# Now the new swap should be working.
+# You also need to update /etc/fstab to mount all this on boot. Add there two lines:
+
+UUID=XXXXXXXXXXXXXXX /swap btrfs subvol=@swap 0 0
+/swap/swapfile none swap sw 0 0
+The UUID is the one of your /dev/sda1.
+
+#Swap file can't be located on a btrfs raid of any sort.

@@ -1,0 +1,68 @@
+#to update all rust-gem packages
+gem update
+gem update --system
+gem upgrade --user-install
+
+
+# bundler (ruby gem)
+gem install bundler
+
+# rails (ruby gem)
+gem install rails
+
+/////////////////////////////
+
+# update all npm packages
+sudo npm update -g
+
+# yarn (nodejs npm)
+npm install -g yarn
+
+# localtunnel (nodejs npm)
+npm install -g localtunnel
+
+npm i -g bootstrap tailwindcss pyscript vite typescript react next angular vue animejs motion framer-motion
+
+///////////////////////////////
+
+# to upgrade all pip packages 
+pip install pip-upgrade-tool
+pip-upgrade --novenv
+
+# Python 
+pip install pyscript twisted tornado gevent async
+
+# openai (python pip)
+pip install openai
+
+# keras (python pip)
+pip install keras
+
+# tensorflow (python pip)
+pip install tensorflow
+# if above dont work
+pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+
+# scipy (python pip)
+pip install scipy
+
+# theano (python pip)
+pip install theano
+
+# matplotlib (python pip)
+pip install matplotlib
+
+# yt-dlp  (python pip)
+pip install yt-dlp
+
+# gdown (python pip)
+pip install gdown
+
+///////////////////////////////
+
+# to upgrade all cargo packages
+cargo install cargo-update
+cargo install-update -a
+
+# Rust Alternatives Rewriten in Rust
+cargo install bat exa procs dust tokei ytop tealdeer grex rmesg zoxide delta

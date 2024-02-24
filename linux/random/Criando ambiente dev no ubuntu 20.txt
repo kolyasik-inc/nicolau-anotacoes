@@ -1,0 +1,168 @@
+
+$ sudo apt install alsa-utils apache2 aria2 arandr arduino atop autoconf automake axel bat binutils bison bluez build-essential bzip2 cmatrix clang cmake clisp coreutils cups curl dialog dos2unix elixir emacs exa exuberant-ctags fd-find feh ffmpeg file-roller figlet fp-compiler gawk gcc gettext git global golang grep groff gvfs gvfs-backends gvfs-fuse gzip htop i3 inetutils-ftp inetutils-ftpd inetutils-inetd inetutils-ping inetutils-syslogd inetutils-talk inetutils-talkd inetutils-telnet inetutils-telnetd inetutils-tools inetutils-traceroute iwd iw kotlin lightdm links linux-headers-generic llvm lynx lxappearance m4 make meson mtools nano neofetch net-tools netctl network-manager network-manager-gnome ninja-build ntfs-3g npm neovim p7zip-full parallel parted pavucontrol perl picom php pulseaudio pulseaudio-utils python3 python3-pip rofi ruby rustc scala sed silversearcher-ag slick-greeter sudo texinfo tmux transmission tree universal-ctags unrar-free usbutils util-linux vim vim-gtk3 vifm w3m wget wireless-tools wpasupplicant xclip xdg-user-dirs xdg-utils xdotool xinit xorg xsel yarn zenity
+
+$ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+
+$ sudo apt install build-essential default-jdk libssl-dev exuberant-ctags ncurses-term ack-grep silversearcher-ag fontconfig imagemagick libmagickwand-dev software-properties-common vim-gtk3 curl
+
+$ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+
+$ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
+$ cd ~/.asdf
+
+$ git checkout "$(git describe --abbrev=0 --tags)"
+
+(add to file .bashrc)
+ . $HOME/.asdf/asdf.sh
+ . $HOME/.asdf/completions/asdf.bash
+
+$ asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+
+$ asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git 
+
+$ bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+
+$ bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-previous-release-team-keyring'
+
+$ asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+
+$ asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+
+$ apt-get -y install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
+
+$ asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
+$ asdf plugin-add kotlin https://github.com/asdf-community/asdf-kotlin.git
+
+$ asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+
+$ asdf plugin-add crystal https://github.com/asdf-community/asdf-crystal.git
+
+$ asdf install ruby 2.6.3
+
+$ asdf global ruby 2.6.3
+
+$ ruby -v
+
+$ asdf install nodejs 12.6.0
+
+$ asdf global nodejs 12.6.0
+
+$ npm i -g npm
+
+$ asdf install erlang 22.0.5
+
+$ asdf global erlang 22.0.5
+
+$ erl
+
+$ asdf install elixir 1.9.0
+
+$ asdf global elixir 1.9.0
+
+$ iex
+
+$ asdf install kotlin 1.3.41
+
+$ asdf global kotlin 1.3.41
+
+$ kotlin -version
+
+$ asdf install rust 1.36.0
+
+$ asdf global rust 1.36.0
+
+$ rustc --version
+
+$ cargo --version
+
+$ asdf install crystal 0.29.0
+
+$ asdf global crystal 0.29.0
+
+$ crystal --version
+
+$ asdf help
+
+$ asdf plugin-update --all
+
+$ asdf update
+
+$ asdf reshim
+
+$ gem install blunder
+
+$ gem install rails
+
+$ npm install -g npm@latest
+
+$ npm install -g yarn
+
+$ npm install -g localtunnel
+
+$ sudo apt install postgresql-12 postgresql-contrib postgresql-server-dev-12 redis-server libhiredis-dev memcached libmemcached-dev
+
+$ psql
+
+$ sudo su postgres
+
+$ createuser --interactive
+
+$ nicolas72198
+
+$ createdb nicolas72198
+
+$ exit
+
+$ psql
+
+$
+
+( ctrl+c )
+
+$ git config --global user.name "nicolas72198"
+
+$ git config --global user.email "mellotokimimotakaari@gmail.com"
+
+$ sudo apt install ubuntu-restricted-extras -y
+
+( https://docs.docker.com/engine/install/ )
+
+$ sudo usermod -aG docker $USER
+
+$ set | less
+
+$ docker pull postgres
+
+$ mkdir -p $HOME/docker/volumes/postgres
+
+$ docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+
+$ docker ps
+
+$ sudo service postgresql stop
+
+$ docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+
+$ psql -h localhost -U postgres
+
+$ ps aux
+
+$ cat/proc/3618/cgroup
+
+$ ps
+
+$ cat/proc/2537/cgroup
+
+$ ssh-keygen -o -a 100 -f ~/.ssh/id_ed25519 -C "mellotokimimorakaari@gmail.com"
+
+$ cat ~/.ssh?id_ed25519
+
+$ cat ~/.ssh/id_ed25519.pub
+
+$ eval "$(ssh-agent -s)"
+
+$ ssh-add ~/.ssh/id_ed25519
+
+$

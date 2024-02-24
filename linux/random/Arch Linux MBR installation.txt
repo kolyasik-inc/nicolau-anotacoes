@@ -1,0 +1,165 @@
+# ethernet cable
+$ ip a
+
+# wireless network
+$ wifi-menu
+
+$ timedatectl set-ntp true
+
+$ lsblk
+
+$ sudo wipefs --all --force /dev/sda
+
+$ cfdisk /dev/sda
+( select disk label "dos" )
+( create partition "sda1"  size "8gb" type " linux swap / solaris" )
+( create partition "sda2" size remaining space with type "linux" )
+( and "write" )
+
+$ lsblk
+
+$ mkfs.ext4 /dev/sda2
+
+$ mkswap /dev/sda1
+
+$ swapon /dev/sda1
+
+$ mount /dev/sda2 /mnt
+
+$ lsblk
+
+$ pacstrap /mnt base linux linux-firmware vim
+
+$ genfstab -U /mnt >> /mnt/etc/fstab
+
+$ cat /mnt/etc/fstab
+
+$ arch-chroot /mnt
+
+$ ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime
+
+$ hwclock --systohc
+
+$ vim /etc/locale.gen
+( scroll down and uncoment "#en_US.UTF-8 UTF-8" and "#pt_BR.UTF-8 UTF-8" and save )
+
+$ locale-gen
+
+$ vim /etc/locale.conf
+( write first line "LANG=en_US.UTF-8" and save )
+
+$ vim /etc/hostname
+( write in first line "arch" and save )
+
+$ vim /etc/hosts
+( scroll down to free space and write that )
+( " 127.0.0.1	localhost " )
+( " ::1		localhost " )
+( " 127.0.1.1	arch.localdomain	arch " )
+( and save file )
+
+$ passwd
+
+$ vim /etc/pacman.conf
+( find line with "#VerbosePkgLists" )
+( and write bellow this line )
+( " ParallelDownloads = 5 " )
+( scroll and uncomment )
+( " #[multilib] " )
+( " #Include = /etc/pacman.d/mirrorlist " )
+( and save the file )
+
+$ reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+
+$ sudo pacman -Sy
+
+$ pacman -S grub networkmanager network-manager-applet dialog wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers bluez bluez-utils cups xdg-utils xdg-user-dirs ntfs-3g gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-smb file-roller alsa-utils alsa-lib pulseaudio pulseaudio-alsa pavucontrol
+
+$ vim /etc/default/grub
+( add that string on end of the text or edit if string already exists and save )
+( " GRUB_DEFAULT=saved " )
+( " GRUB_DISABLE_OS_PROBER=false " )
+( " GRUB_SAVEDEFAULT=true " )
+
+$ grub-install --target=i386-pc /dev/sda
+
+$ grub-mkconfig -o /boot/grub/grub.cfg
+
+$ exit
+
+$ umount -a
+
+$ reboot
+( login name is " root " )
+
+$ systemctl start NetworkManager
+
+$ systemctl enable NetworkManager
+
+# if u have ethernet cable
+$ ip a
+
+# if u have wifi connection
+$  nmtui
+( activate a connection )
+
+$ useradd -m -G wheel "username"
+
+$ passwd "username"
+
+$ EDITOR=vim visudo
+( scroll down and uncomment " %wheel ALL=(ALL) ALL " and save file )
+
+$ pacman -S xf86-video-intel xf86-video-nouveau xf86-video-amdgpu xf86-video-ati mesa lib32-mesa vulkan-swrast vulkan-mesa-layers gnutls lib32-gnutls openal lib32-openal glu lib32-glu glm virtualgl
+
+$ pacman -S xorg
+
+$ pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+
+$ systemctl enable lightdm
+
+$ pacman -S xfce4 xfce4-goodies
+
+$ pacman -S vim git clang fpc ffmpeg lynx wget curl transmission-cli neofetch cmatrix the_silver_searcher cmake p7zip bzip2 gzip unrar unzip parted tree nano emacs tmux xdotool dosbox dos2unix assimp w3m links aria2
+
+$ pacman -S python python-pip go nodejs npm yarn ruby rust kotlin crystal erlang elixir
+
+$ pacman -S java-openjfx jdk-openjdk jre-openjdk jre-openjdk-headless
+
+$ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k powerline-fonts awesome-terminal-fonts ttf-iosevka-nerd adobe-source-code-pro-fonts
+
+$ pacman -S wine-staging winetricks wine-gecko wine-mono scratch discord lmms minetest obs-studio openshot audacity gimp pinta blender qbittorrent mame zsnes mgba-qt notepadqq hexchat handbrake mupen64plus inkscape code playonlinux vlc firefox gparted smplayer audacious risretto thunar gpick gnome-calculator libreoffice
+
+$ sudo pacman -S arc-gtk-theme materia-gtk-theme papirus-icon-theme arc-icon-theme
+
+
+$ git clone https://aur.archlinux.org/paru-bin.git
+( or $ git clone https://aur.archlinux.org/yay-bin.git )
+
+# paru or yay
+$ cd paru-bin
+
+$ makepkg -si
+
+$ cd ~
+
+$ rmrf ./*-bin 
+
+$ paru -S mugshot gnome-system-tools powershell-bin visual-studio-code-bin brave-bin microsoft-edge-stable-bin 
+
+$ sudo pacman -S zsh zsh-completions zsh-autosuggestions
+
+# paru or yay
+$ paru -S --noconfirm zsh-theme-powerlevel10k-git
+
+$ echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+# paru or yay
+$ paru -S asdf-vm
+
+$ vim .bashrc
+( append to end of .bashrc or .zshrc file )
+( . /opt/asdf-vm/asdf.sh )
+
+$ reboot
+

@@ -1,0 +1,350 @@
+$ localectl list-keymaps | less
+
+$ loadkeys us
+( or for Brazil use $ loadkeys br-abnt2 )
+( or for US International use $ loadkeys us-acentos  )
+
+$ timedatectl set-ntp true
+
+# cheack internet cable connection
+$ ip -c a
+
+# connect wifi network
+$ iwctl
+$ station wlan0 connect wifi_name
+
+$ vim /etc/pacman.conf
+( " ParallelDownloads = 5 " )
+
+$ pacman -Sy reflector
+
+$ reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+
+$ gdisk /dev/sda
+
+( command: n )
+( First sector: default )
+( Last sector: +500M )
+( L to show codes and search BIOS )
+( GUID: ef02 )
+
+( command: n )
+( First sector: default )
+( Last sector: +1G )
+( L to show codes and search Linux filesystem )
+( GUID: 8300 )
+
+( command: n )
+( First sector: default )
+( Last sector: +8G )
+( L to show codes and search Swap )
+( GUID: 8200 )
+
+( command: n )
+( First sector: default )
+( Last sector: default )
+( L to show codes and search Linux filesystem )
+( GUID: 8300 )
+
+( command: w )
+( proceed? y )
+
+$ mkfs.ext4 -T small /dev/sda2
+
+$ mkswap /dev/sda3
+
+$ mkfs.btrfs /dev/sda4
+
+$ mount /dev/sda4 /mnt
+
+$ btrfs subvolume create /mnt/@
+
+$ btrfs subvolume create /mnt/@home
+
+$ btrfs subvolume create /mnt/@var
+
+$ umount /mnt
+
+$ mount -o noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@ /dev/sda4 /mnt
+( if u not are using SSD delete ssd,discard=async and replace using nossd,autodefrag )
+
+$ mkdir -p /mnt/{boot/efi,home,var}
+
+$ mount -o noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@home /dev/sda4 /mnt/home/
+( if u not are using SSD delete ssd,discard=async and replace using nossd,autodefrag )
+
+$ mount -o noatime,compress=zstd,ssd,discard=async,space_cache=v2,subvol=@var /dev/sda4 /mnt/var/
+( if u not are using SSD delete ssd,discard=async and replace using nossd,autodefrag )
+
+$ mount /dev/sda2 /mnt/boot
+
+$ lsblk
+
+$ pacstrap /mnt base linux-lts linux-firmware git vim btrfs-progs
+
+$ genfstab -U /mnt >> /mnt/etc/fstab
+
+$ less /mnt/etc/fstab
+
+$ arch-chroot /mnt
+
+$ timedatectl list-timezones | grep Fortaleza
+
+$ ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime
+
+$ hwclock --systohc
+
+$ vim /etc/locale.gen
+( search for that locales and uncomment )
+( en_US.UTF-8 UTF-8 )
+( pt_BR.UTF-8 UTF-8 )
+
+$ locale-gen
+
+$ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+$ echo "KEYMAP=us" >> /etc/vconsole.conf
+( or "KEYMAP=br-abnt2" )
+
+$ echo "username" >> /etc/hostname
+
+$ vim /etc/hosts
+( scroll down to free space and write that )
+( " 127.0.0.1	localhost " )
+( " ::1		localhost " )
+( " 127.0.1.1	username.localdomain	username " )
+( and save file )
+
+$ vim /etc/pacman.conf
+( find line with "#VerbosePkgLists" )
+( and write bellow this line )
+( " ParallelDownloads = 5 " )
+( scroll and uncomment )
+( " #[multilib] " )
+( " #Include = /etc/pacman.d/mirrorlist " )
+( and save the file )
+
+$ reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+
+$ sudo pacman -Sy
+
+$ pacman -S grub grub-btrfs efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant net-tools iwd iw dhclient dhcpcd netctl vim dialog os-prober mtools dosfstools base-devel linux-headers bluez bluez-utils cups xdg-utils xdg-user-dirs ntfs-3g gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-smb file-roller alsa-utils alsa-lib pulseaudio pulseaudio-alsa pavucontrol arch-install-scripts pacman-contrib
+
+$ vim /etc/default/grub
+( add that string on end of the text or edit if string already exists and save )
+( " GRUB_DEFAULT=saved " )
+( " GRUB_DISABLE_OS_PROBER=false " )
+( " GRUB_SAVEDEFAULT=true " )
+
+$ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+
+$ grub-mkconfig -o /boot/grub/grub.cfg
+
+$ systemctl enable NetworkManager
+
+$ systemctl enable bluetooth
+
+$ systemctl enable cups
+
+# if u are using SSD
+( $ systemctl enable fstrim.time )
+
+$ useradd -m username
+
+$ passwd username
+
+$ usermod -aG wheel username
+
+$ id username
+
+$ EDITOR=vim visudo
+( scroll down and uncomment " %wheel ALL=(ALL) ALL " and save file )
+
+$ vim /etc/mkinitcpio.conf
+( go to "MODULES=()" and edit to )
+( MODULES=(btrfs) )
+
+$ mkinitcpio -P
+
+$ exit
+
+$ umount -R /mnt
+
+$ reboot
+
+( login: username )
+
+$ ip a
+
+# to connect to wifi
+$ nmtui
+
+$ sudo pacman -Sy
+
+$ sudo pacman -S xorg xorg-xinit xorg-drivers xsel xclip lightdm lightdm-slick-greeter i3 dmenu rofi lxappearance arandr nitrogen xfce4-terminal picom feh archlinux-wallpaper redshift
+
+$ sudo systemctl enable lightdm
+
+$ sudo vim /etc/lightdm/lightdm.conf
+# search for "greeter-session" uncomment and edit to
+( greeter-session=lightdm-slick-greeter )
+
+$ pacman -S git clang fpc ffmpeg lynx wget curl transmission-cli neofetch cmatrix the_silver_searcher cmake p7zip bzip2 gzip unrar unzip bzip3 lrzip lz4 lzip lzop xz zstd unarchiver parted tree figlet nano emacs vim tmux vifm parallel atop ctop htop xdotool dos2unix assimp w3m links inetutils aria2 apache axel zenity ctags global grex bat exa dust sd fd tokei procs tealdeer git-delta coreutils util-linux usbutils github-cli meson ninja android-tools inxi ltrace strace gdb bind scanmem rkhunter shellcheck fakeroot fakechroot pactree flatpak yt-dlp 
+
+$ pacman -S python python-pip go nodejs npm yarn ruby rust kotlin scala crystal erlang elixir php lua perl clisp
+
+$ pacman -S arch-wiki-lite ruby-docs python-docs arch-wiki-docs linux-docs parallel-docs postgresql-docs vulkan-html-docs vte-docs qemu-docs xorg-docs glib2-docs dbus-docs scala-docs erlang-docs
+
+$ pacman -S java-openjfx jdk-openjdk jre-openjdk jre-openjdk-headless
+
+$ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome powerline-fonts awesome-terminal-fonts ttf-iosevka-nerd adobe-source-code-pro-fonts terminus-font
+
+$ ls /usr/share/kbd/consolefonts/
+
+$ vim /etc/vconsole.conf
+( FONT=ter-220b )
+
+$ pacman -S wine-staging winetricks wine-gecko wine-mono dosbox scratch discord lmms minetest obs-studio kdenlive audacity gimp pinta blender qbittorrent mame zsnes mgba-qt notepadqq hexchat handbrake mupen64plus inkscape mpv vlc firefox gparted smplayer audacious ristretto pcmanfm mousepad gpick galculator libreoffice neovim lutris darktable gnome-keyring openvpn okular pandoc calibre gucharmap xfce4-taskmanager flameshot vokoscreen texlive-latexextra krita gamescope gameconqueror
+
+$ sudo pacman -S arc-gtk-theme materia-gtk-theme papirus-icon-theme arc-icon-theme
+
+$ sudo pacman -S gamemode lib32-gamemode gnutls lib32-gnutls
+
+$ sudo pacman -S qemu-full libvirt virt-manager dnsmasq
+
+$ usermod -aG libvirt username
+
+$ systemctl enable libvirtd.service
+
+$ systemctl start libvirtd.service virtlogd.service
+
+
+$ git clone https://aur.archlinux.org/paru-bin.git
+( or $ git clone https://aur.archlinux.org/yay-bin.git )
+
+# paru or yay
+$ cd paru-bin
+
+$ makepkg -si
+
+$ cd ~
+
+$ rmrf ./*-bin 
+
+# paru or yay
+$ paru -S timeshift timeshift-autosnap zramd lightdm-settings j4-dmenu-desktop powershell-bin visual-studio-code-bin brave-bin microsoft-edge-stable-bin
+
+$ yay -S usbreset cpuid2cpuflags resolve-march-native 
+
+$ yay -S kazam m64py whatsapp-nativefier telegram-desktop-bin 
+
+$ yay -S kvantum adwaita-qt4 adwaita-qt5 adwaita-qt6 qt5ct qt6ct qt5-styleplugins qt6gtk2
+
+yay -S rust-docs nodejs-docs perl-docs 
+
+$ sudo systemctl enable --now zramd
+
+$ reboot
+
+# generate config file 
+# accept win key for default mod key
+# "super + enter" open the terminal
+
+$ setxkbmap us
+
+$ vim .config/i3/config
+# Keyboard
+exec setxkbmap -layout us -variant alt-intl
+
+# Display Resolution
+# exec_always xrandr --output Virtual-1 --mode 1024x768
+ 
+# Display Wallpaper
+# exec_always feh --bg-fill /home/
+exec_always nitrogen --restore
+
+# Picom
+exec picom --no-fading-openclose
+# exec picom -f
+
+# Gaps
+gaps inner 7
+
+# You can also use any non-zero value if you'd like to have a border
+for_window [class=".*"] border pixel 0
+
+# Keybinding for i3lock
+bindsym $mod+x exec i3lock -c 000000
+
+///////////////////////////////////////////////////////////////////////////
+
+# for use j4-dmenu-desktop
+$ sudo vim .config/i3/config
+( search for dmenu and change )
+( bindsym $mod+d exec --no-startup-id dmenu_run )
+( change to )
+( bindsym $mod+d exec --no-startup-id j4-dmenu-desktop )
+
+# for use rofi instead dmenu
+$ rofi-theme-selector
+( bindsym $mod+d exec rofi -show run )
+
+$ sudo cp /etc/xdg/picom.conf .config/
+
+$ vim ./config/picom.conf
+# search for vsync and
+# uncomment # vsync = false; 
+# comment vsync = true;
+
+$ sudo cp /etc/i3status.conf .config/i3/
+
+$ sudo vim .config/i3/i3status.conf
+# remove what u not are using like battery 
+
+$ sudo vim .config/i3/config
+# search for "status_command" edit and add another lines
+status_command i3status -c /home/username/.config/i3/i3status.conf
+tray_output none
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono 10
+
+$ sudo vim .config/gtk-3.0/gtk.css
+VteTerminal, vte-terminal {
+    padding: 16px;
+}
+
+$ sudo pacman -S zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-theme-powerlevel10k ttf-meslo-nerd
+
+# put in .zshrc
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+fpath=(/usr/share/zsh/site-functions $fpath)
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+ 
+# paru or yay
+$ paru -S asdf-vm
+
+$ vim .bashrc
+( append to end of .bashrc or .zshrc file )
+( . /opt/asdf-vm/asdf.sh )
+
+# install lunarvim
+$ bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+
+# pentest tools
+$ sudo pacman -Syu aircrack-ng reaver hashcat hashcat-utils hcxtools hcxkeys hcxdumptool john sqlmap nmap gnu-netcat wireshark-cli macchanger tesseract tesseract-data-eng exploitdb whois tcpdump httrack traceroute
+
+$ yay -S crunch wordlists metasploit-git mad-metasploit-git social-engineer-toolkit gau git-dumper-git sherlock-git
+
+# python scripts
+pacman -S python-pybullet python-twisted python-tornado python-setuptools python-pytest python-matplotlib python-numpy python-scipy python-keras
+yay -S --noconfirm --sudoloop python-openai gdown python-theano -git
+
+$ sudo vim .config/pip/pip.conf
+( [global] )
+( break-system-packages = true )
+
+# set default apps
+$ xdg-mime default nautilus.desktop inode/directory
+$ xdg-settings set default-web-browser firefox.desktop

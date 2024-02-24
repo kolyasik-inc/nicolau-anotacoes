@@ -1,0 +1,131 @@
+
+# list linux service
+systemd-analyze blame
+
+# list filesystem type of devices
+mount | column -r
+
+# list console fonts
+ls /usr/share/kbd/consolefonts/
+setfont font_name
+
+# list console keyboard layouts
+ls /usr/share/kbd/keymaps/i386/qwerty/
+loadkeys /usr/share/kbd/keymaps/i386/qwerty/us-acentos.map.gz
+( or /usr/share/kbd/keymaps/i386/qwerty/br-latin1-us.map.gz)
+
+# show mod keys
+xmodmap
+
+# print key information
+xev
+
+# show properties of windows
+xprop
+
+#kill xserver
+pkill -f '^/usr/bin/X '
+
+# for copy except in bash
+# Put the following to your .bashrc
+# example1: mv !(fileOne) ~/path/newFolder
+# example2: mv !(fileOne|fileTwo) ~/path/newFolder
+( shopt -s extglob)
+
+
+# for copy except in zsh
+# add this to your .zshrc:
+# example1: mv ~/path/to/source^(exception) ~/path/to/target/folder
+# example2: mv ~/path/to/source^(exceptionOne|exceptionTwo) ~/path/to/target/folder
+( setopt extended_glob )
+
+
+# -- UBUNTU --
+# remove cache from apt
+apt clean
+apt autoclean
+
+# remove no used dependencies
+sudo apt autoremove
+
+# zramd ubuntu
+sudo apt install zram-tools
+sudo systemctl enable zramswap.service
+
+# -- ARCH --
+# Pacman install all optional dependencies (as dependencies)
+sudo pacman -S --asdeps --needed $(pacman -Si wine | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')
+
+# to use $rankmirrors command u need install
+pacman -S pacman-contrib
+
+# change mirrors of BLACKARCH to fast download
+rankmirrors -t /etc/pacman.d/blackarch-mirrorlist -r blackarch
+rankmirrors /etc/pacman.d/blackarch-mirrorlist -r blackarch
+
+# change mirrors of ARCH to fast download
+rankmirrors /etc/pacman.d/mirrorlist
+
+# solve keyring problems
+pacman-key --init
+pacman-key --populate
+pacman-key --refresh-keys
+pacman -Sy archlinux-keyring
+
+# change mirrors of ARCH to fast download with pacman
+sudo reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+
+# change mirrors of MANJARO to fast download with pacman
+sudo pacman-mirrors -g && sudo pacman -Sy vim
+sudo pacman-mirrors --fasttrack && sudo pacman -Sy vim
+sudo pacman-mirrors --geoip && sudo pacman -Sy vim
+
+# manjaro tools
+
+mkmanjaroroot --> mkchroot
+manjarobuild --> buildpkg
+mkset --> buildset
+pacstrap --> basestrap
+genfstab --> fstabgen
+arch-chroot --> manjaro-chroot
+
+# change mirrors of MANJARO to fast download with pacman
+sudo pacman-mirrors -g && sudo pacman -Sy
+sudo pacman-mirrors --geoip
+
+# -- DEFRAG FILESYSTEMS __
+# To defragment all the files in the /data directory and compress them with the ZSTD sudo btrfs filesystem defragment -rvf /data
+# To defragment all the files in the /data directory and compress them with the ZSTD
+sudo btrfs filesystem defragment -rvf -czstd /data
+
+
+# -- COMPILER FLAGS --
+# how get cflags names
+gcc -v -E -x c /dev/null -o /dev/null -march=native 2>&1 | grep /cc1 | grep mtune
+
+# gcc config especifications
+gcc -march=native -v -Q --help=target
+
+# rust flags config
+rustc -C target-cpu=native --print cfg
+
+# detailed cpu info
+cat /proc/cpuinfo
+
+# -- WINE --
+# to create wine prefix
+WINEPREFIX="path_to_prefix_folder" winecfg
+
+# to install specific componets via command line
+WINEPREFIX="path_to_prefix_folder" winetricks --force dotnet20 dotnet48
+
+# another example
+WINEPREFIX="path/to/prefix" winetricks dotnet20 dotnet48 d3dcompiler_43 d3dcompiler_47 d3dx9 d3dx10 d3dx11_42 d3dx11_43 directshow directplay faudio vcrun2003 vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2015
+
+# -- USB Stick  --
+# allow non root users to write
+mount -o gid=users,fmask=113,dmask=002 /dev/sdX /mnt/usbstick
+
+# set default apps
+xdg-mime default nautilus.desktop inode/directory
+xdg-settings set default-web-browser firefox.desktop

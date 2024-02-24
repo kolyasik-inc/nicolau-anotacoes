@@ -1,0 +1,147 @@
+## Builtin normal mode keys of Vifm
+
+Esc :		cancel/reset selection
+! :		make range
+% :		go to %pos
+ˆ :		first column
+0 :		first column
+( :		prev group
+) : 		next group
+= :		local filter
+Tab :		switch pane
+e :		explore file
+t : 		toggle select
+Y : 		yank file(s)
+u :		undo
+i :		forced	open
+P :		move here
+p :		copy here
+{ :		prev file/dir
+} :		next file/dir
+F :		to char fwd
+f :		to char back
+G :		go to last
+H :		to view top
+h :		parent/left
+j :		item below
+k :		item above
+L :		to view bottom
+l :		open/right
+: :		cmdline mode
+; :		char fwd
+” :		use register
+’ :		visit mark
+Enter :		open current file(s)
+C :		clone file(s)
+N :		prev match
+n :		next match
+M :		to view middle
+m :		set mark
+, :		char back
+. :		repeat :cmd
+? :		search back
+/ :		search fwd
+Space :		switch pane
+
+q :		(1)
+r :		(2)
+a :		(2,3)
+V :		(3)
+v :		(3)
+y :		(4)
+Shift :		(5)
+[ :		(6)
+g :		(7)
+z :		(8)
+Ctrl :		(9)
+Z :		(10)
+D :		(11)
+d :		(11)
+c :		(12)
+
+(1) external editing
+q:		– edit : command
+q= q/ q?	– edit pattern
+
+(2) symbolic links
+al/rl		- absolute/relative link
+
+(3) visual mode
+v/V		– enter visual mode
+av		– visual amend
+
+(4) yanking
+y({motion}|y)	– yank file(s)
+
+(5) with shift
+<s-tab>		– switch to view pane
+
+(6) [ and ]
+]c/[c		– next/prev diff mismatch
+]d/[d		– next/prev dir
+]s/[s		– next/prev selected
+[z/]z		– first/last tree sibling
+]r/[r		– next/prev parent dir (no wrap)
+]R/[R		– next/prev parent dir (wrap)
+
+(7) g*
+ga/gA		– (re)calculate size
+gt/gT		– next/previous tab
+gf		– navigate to link target
+gf/gF		– navigate to link target (one/all levels)
+gg		– go to the first item
+gs		– restore/make selection
+gv		– restore visual mode
+gr		– run with rights elevation (Win)
+gU({motion}|U|gU|gg)	– to uppercase
+gu({motion}|u|gu|gg)	– to lowercase
+gh/gj/gk/gl	– ’lsview’ h/j/k/l analogs
+
+(8) Z*, z*
+zj/zk		– go to next/prev tree sibling
+zx		– fold tree node
+zM		– apply filename filters only
+zO		– remove filename filters (except local one)
+zR		– filter no files
+zd		– exclude custom view entry
+zf		– add current file to filter
+zr		– clear local filter
+zm/zo/za	– hide/show/toggle dot files
+zt/zz/zb	– put cursor to the top/center/bottom
+
+(9) with control
+<c-u/d>		– scroll half-page up/down
+<c-y/e>		– scroll line up/down
+<c-b/f>		– scroll page up/down
+<c-i/o>		– history forward/backward
+<c-p/n>		– go to item above/below
+<c-a/x>		– inc/dec number in names
+<c-g>		– display file info
+<c-l>		– redraw screen
+<c-r>		– redo operation
+<c-c>		– reset selection and highlight (=<esc>)
+<c-i>		– switch pane (=<tab>)
+<c-w>( ||)	– maximize pane size
+<c-w>H/J/K/L	– move pane to the left/bottom/top/right
+<c-w>b/t	– go to bottom-right/top-left pane
+<c-w>h/j/k/l	– go to left/bottom/top/right pane
+<c-w>s/v/o	– horizontal/vertical/only layout
+<c-w>w/p	– go to other pane <c-w>x – exchange panes
+<c-w>(+|>)	– increase pane size <c-w>z – exit all view modes
+<c-w>(-|<)	– decrease pane size <c-w>= – size panes equally
+
+(10) Z*
+ZZ/ZQ		– exit with/without saving state
+
+(11) d* and D*
+d({motion}|d)	– delete file(s)
+D({motion}|D)	– perm. deletion
+do/dp		– obtain/put file in diff
+
+(12) changing
+cw		– rename file(s)
+cW		– rename root of current file
+cl		– change symlink target
+cg		– change group (*nix)
+co		– change owner (*nix)
+cp		– change file perms/attrs

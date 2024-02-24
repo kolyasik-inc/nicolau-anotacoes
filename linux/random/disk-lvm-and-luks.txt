@@ -1,0 +1,102 @@
+$ echo -n 'your_passphrase' > /path/to/keyfile
+$ chown root:root /path/to/keyfile; chmod 400 /path/to/keyfile
+$ perl -pi -e 'chomp if eof' /path/to/keyfile
+$ dd bs=512 count=4 if=/dev/random of=/etc/mykeyfile iflag=fullblock
+$ chmod 600 /etc/mykeyfile
+$ shred --remove --zero mykeyfile
+$ cryptsetup luksAddKey /dev/sda2 /etc/mykeyfile
+
+# manually unlock with key
+$ cryptsetup open /dev/sda2 dm_name --key-file /etc/mykeyfile
+
+# /////////////////////////////////////////////////////////
+
+
+# create encryption on partition
+$ cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passphrase luksFormat /dev/sdX
+(command: YES)
+(password: test123)
+
+# open crypt root filesystem
+$ cryptsetup luksOpen /dev/sdX cryptroot
+
+# after base system install
+$ vim /etc/mkinitcpio.conf
+# search line wiwth  " HOOKS=() "
+# add after autodetect hook " autodetectic keyboard keymap "
+# add after block hook " block encrypt"
+
+# after grub install 
+$ blkid > ~/uuid.txt
+$ vim ~/uuid.txt
+# search for UUID of u /dev/mapper/cryptroot
+# copy the uuid "cryptdevice=UUID=0000-00000-0000-000:cryptroot root=/dev/mapper/cryptroot" 
+$ vim /etc/default/grub
+# search for GRUB_CMDLINE_LINUX=""
+# and edit into GRUB_CMDLINE_LINUX="cryptdevice=UUID=0000-00000-0000-000:cryptroot root=/dev/mapper/cryptroot"
+$ grub-mkconfig -o /boot/grub/grub.cfg
+
+# /////////////////////////////////////////////////////////
+
+# create encryption on partition
+$ encrypt a partition cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passphrase luksFormat /dev/sdX
+(command: YES)
+(password: test123)
+
+# open crypt root filesystem
+$ cryptsetup luksOpen /dev/sdX cryptlvm
+
+$ pvcreate /dev/mapper/cryptlvm
+$ vgcreate vg1 /dev/mapper/cryptlvm
+$ lvcreate -L 40G vg1 -n root
+$ lvcreate -L 2G vg1 -n swap
+$ lvcreate -l 100%FREE -n home
+
+$ mkfs.ext4 /dev/vg1/root
+$ mkfs.ext4 /dev/vg1/swap
+$ mkfs.ext4 /dev/vg1/home
+
+# after base system install
+$ vim /etc/mkinitcpio.conf
+# search line wiwth  " HOOKS=() "
+# add after autodetect hook " autodetect keyboard keymap "
+# add after block hook " block encrypt lvm2"
+
+# after grub install 
+$ blkid > ~/uuid.txt
+$ vim ~/uuid.txt
+# search for UUID of u /dev/mapper/cryptlvm
+# copy the uuid "cryptdevice=UUID=0000-00000-0000-000:cryptroot root=/dev/mapper/cryptlvm" 
+$ vim /etc/default/grub
+# search for GRUB_CMDLINE_LINUX=""
+# and edit into GRUB_CMDLINE_LINUX="cryptdevice=UUID=0000-00000-0000-000:cryptlvm root=/dev/vg1/root"
+$ grub-mkconfig -o /boot/grub/grub.cfg
+
+# /////////////////////////////////////////////////////////
+
+# create encryption on partition
+$ encrypt a partition cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passphrase luksFormat /dev/sda
+$ encrypt a partition cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passphrase luksFormat /dev/sdb
+
+# open crypt root filesystem
+$ cryptsetup luksOpen /dev/sda cryptraid0
+$ cryptsetup luksOpen /dev/sda cryptraid1
+
+# create raid0 structure
+$ mdadm --misc --zero-superblock /dev/mapper/cryptraid0
+$ mdadm --misc --zero-superblock /dev/mapper/cryptraid1
+$ mdadm --create --verbose --level=0 --metadata=1.2 --raid-devices=2 /dev/md0 /dev/mapper/cryptraid0 /dev/mapper/cryptraid1s
+
+
+
+
+# after grub install 
+$ blkid > ~/uuid.txt
+$ vim ~/uuid.txt
+# search for UUID of u /dev/mapper/cryptlvm
+# copy the uuid "cryptdevice=UUID=0000-00000-0000-000:cryptraid0 root=/dev/mapper/cryptlvm" 
+# and too copy the uuid "cryptdevice=UUID=0000-00000-0000-000:cryptraid1 root=/dev/mapper/cryptlvm" 
+$ vim /etc/default/grub
+# search for GRUB_CMDLINE_LINUX=""
+# and edit into GRUB_CMDLINE_LINUX="cryptdevice=UUID=0000-00000-0000-000:cryptlvm root=/dev/mapper/cryptroot"
+$ grub-mkconfig -o /boot/grub/grub.cfg

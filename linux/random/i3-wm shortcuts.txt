@@ -1,0 +1,28 @@
+mod + enter :			open new terminal
+mod + j :			focus left
+mod + k :			focus down
+mod + l :			focus up
+mod + ; :			focus right
+mod + a :			focus parent
+mod + Space :			toggle focus mode
+mod + Shift + j :		move window left
+mod + Shift + k :		move window down
+mod + Shift + l :		move window up
+mod + Shift + ; :		move window right
+mod + d :			aplications laucher (demenu)
+mod + shift + q :		close window
+mod + e :			default window mode
+mod + s :			stack window mode
+mod + w :			tab window mode
+mod + f :			fullscreen window mode
+mod + v :			vertical split mode
+mod + h :			horizontal split mode
+mod + r :			resize window mode
+mod + shift + space :		toggle floating window
+mod + left click :		drag floating window
+mod + arrows :			move between windows
+mod + shift + arrows :		move window to another side
+mod + number :			move to another workspace
+mod + shift + number :		move window to another workspace
+mod + shift + e :		close i3-wm session
+mod + shift + r :		reload i3-wm session

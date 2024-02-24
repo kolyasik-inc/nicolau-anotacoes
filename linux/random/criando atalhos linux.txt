@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Internet Explorer
+Exec=wine "C:\Program Files\Internet Explorer\iexplore.exe"
+Icon=/path/to/iconfile
+Type=Application
+Categories=Wine;
