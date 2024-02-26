@@ -1,0 +1,12 @@
+# to create wine prefix
+WINEPREFIX="path_to_prefix_folder" winecfg
+
+# to install specific componets via command line
+WINEPREFIX="path_to_prefix_folder" winetricks --force dotnet20 dotnet48
+
+# another example 
+WINEPREFIX="path/to/prefix" winetricks dotnet20 dotnet48 d3dcompiler_43 d3dcompiler_47 d3dx9 d3dx10 d3dx11_42 d3dx11_43 directshow directplay faudio vcrun2003 vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2015
+
+winetricks --unattended dotnet20 dotnet35 dotnet40 dotnet452 dotnet462 dotnet472 dotnet48 d3dcompiler_43 d3dcompiler_47 d3dx9 d3dx10 d3dx11_42 d3dx11_43 xna40 directshow directplay faudio vcrun2003 vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2015
+
+winetricks --unattended dotnet20 dotnet35 dotnet40 dotnet452 dotnet46 dotnet461 dotnet462 dotnet471 dotnet472 dotnet48 d3dcompiler_43 d3dcompiler_47 d3dx9 d3dx10 d3dx11_42 d3dx11_43 xna40 directshow directplay faudio vcrun2003 vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2015

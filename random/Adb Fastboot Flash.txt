@@ -1,0 +1,5 @@
+# install custom recovery
+fastboot flash recovery
+
+# unlock bootloader
+fastboot oem unlock
