@@ -1,8 +1,0 @@
-# musics and audios
-yt-dlp --extract-audio --audio-format mp3 "https://www.youtube.com/watch?v=oHg5SJYRHA0"
-
-# videos
-yt-dlp -S "res:480" -f mp4
-
-# playlist with numbers
-yt-dlp -S "res:480" -f mp4 -o "%(playlist_index)s-%(title)s.%(ext)s"
