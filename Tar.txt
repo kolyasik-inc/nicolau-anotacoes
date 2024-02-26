@@ -1,0 +1,22 @@
+Para arquivos tar:
+tar -xvf arquivo.tar
+
+Para arquivos tar.gz:
+tar -xzvf arquivo.tar.gz
+
+Para arquivos tar.bz2:
+tar -xjvf arquivo.tar.bz2
+
+Para arquivos tar.xz:
+tar -xJvf arquivo.tar.xz
+
+Para .tar.lz ou .tar.lzma:
+tar --lzma -xvf arquivo.tar.lz
+ou
+tar --lzma -xvf arquivo.tar.lzma
+
+Para .tar.sz:
+tar --lzip -xvf arquivo.tar.sz
+
+Para .tar.zst
+tar -I zstd -xvf arquivo.tar.zst
