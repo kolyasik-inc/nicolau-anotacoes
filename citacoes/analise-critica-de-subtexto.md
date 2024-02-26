@@ -2,6 +2,34 @@
 
 |Numero|Topico|
 |---|---|
+|01|[Prefacio de Analise Critica](#acs-01)|
+
+---
+
+##### acs-01
+Prefacio de Analise Critica de Subtexto
+
+Uma crítica de subtexto envolve uma análise profunda dos elementos implícitos, sugeridos ou não explícitos dentro de uma obra literária, cinematográfica, artística ou qualquer outra forma de expressão cultural. O subtexto se refere às ideias, emoções, temas e significados que não são expressos de maneira direta no texto ou na trama, mas que são insinuados por meio da narrativa, do diálogo, do simbolismo e de outros elementos artísticos. Aqui estão algumas considerações-chave ao analisar e criticar o subtexto:
+
+Identificar o subtexto: O primeiro passo é identificar os elementos de subtexto na obra em questão. Isso pode incluir metáforas, simbolismo, insinuações, linguagem figurada, gestos, olhares, silêncios, entre outros. O subtexto pode ser revelado por meio de personagens, relacionamentos, cenários ou diálogos.
+
+Contexto cultural e social: Para entender completamente o subtexto, é importante considerar o contexto cultural e social no qual a obra se desenrola. Os valores, crenças e normas da época podem influenciar na interpretação do subtexto.
+
+Análise de personagens: Os personagens costumam ser portadores importantes de subtexto. Suas motivações, desejos e conflitos internos podem não ser explícitos, mas podem ser descobertos por meio de uma análise cuidadosa de suas ações e diálogos.
+
+Temas e motivos recorrentes: A identificação de temas e motivos recorrentes ao longo da obra pode ser uma pista importante do subtexto. Esses temas costumam ser universais e podem lançar luz sobre o que o autor ou criador está tentando transmitir de maneira subliminar.
+
+Contraste entre o dito e o não dito: Comparar o que os personagens dizem com o que realmente sentem ou desejam é essencial para desvendar o subtexto. Frequentemente, os personagens escondem seus verdadeiros sentimentos ou intenções, e esse contraste pode ser uma fonte rica de subtexto.
+
+Simbolismo e metáforas: O uso de símbolos e metáforas em uma obra frequentemente tem um propósito subjacente. Identificar e analisar esses elementos pode proporcionar uma compreensão mais profunda do significado da obra.
+
+Interpretação subjetiva: É importante reconhecer que o subtexto frequentemente permite interpretações subjetivas. Duas pessoas podem interpretar o mesmo subtexto de maneira diferente, com base em suas próprias experiências e perspectivas.
+
+Relação com o tema central: O subtexto geralmente está de alguma forma relacionado ao tema central da obra. Examinar como o subtexto contribui para a compreensão do tema principal é fundamental em uma crítica de subtexto.
+
+Intenção do autor ou criador: Considerar a intenção do autor ou criador também é essencial ao analisar o subtexto. Às vezes, os criadores de obras têm um propósito específico ao incluir certos elementos de subtexto.
+
+Em resumo, uma crítica de subtexto busca explorar e compreender os elementos não explícitos e sugeridos dentro de uma obra, o que pode adicionar uma camada adicional de profundidade e significado à experiência do espectador ou leitor. Essa análise permite uma apreciação mais completa da obra e seu impacto no público.
 
 ---
 
