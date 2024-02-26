@@ -1,0 +1,49 @@
+# Gentoo Devel Packages
+
+```bash
+acct-user/git app-arch/bzip2 app-arch/gzip app-arch/p7zip app-arch/unrar app-arch/unzip app-editors/emacs app-editors/nano app-editors/vim app-misc/figlet app-misc/neofetch app-misc/resolve-march-native app-misc/tmux app-misc/vifm app-portage/cpuid2cpuflags app-portage/eix app-portage/gentoolkit app-shells/gentoo-zsh-completions app-shells/zsh app-shells/zsh-completions app-shells/zsh-syntax-highlighting app-text/dos2unix app-text/tree dev-lang/fpc dev-tcltk/expect dev-util/cmake dev-util/ctags dev-util/global dev-util/meson dev-util/ninja dev-util/patchutils dev-util/pkgconf gnome-base/gvfs gnome-extra/zenity media-libs/assimp media-video/ffmpeg net-analyzer/netcat net-analyzer/nmap net-analyzer/tcpdump net-misc/aria2 net-misc/axel net-misc/curl net-misc/iputils net-misc/wget net-misc/whois net-p2p/transmission sys-apps/coreutils sys-apps/fakeroot sys-apps/fd sys-apps/file sys-apps/findutils sys-apps/gawk sys-apps/groff sys-apps/pciutils sys-apps/sed sys-apps/texinfo sys-apps/usbutils sys-apps/util-linux sys-auth/elogind sys-block/parted sys-boot/os-prober sys-devel/autoconf sys-devel/automake sys-devel/binutils sys-devel/bison sys-devel/clang sys-devel/flex sys-devel/gettext sys-devel/libtool sys-devel/m4 sys-devel/patch sys-fs/dosfstools sys-fs/genfstab sys-fs/mtools sys-fs/ntfs3g sys-kernel/gentoo-kernel-bin sys-kernel/gentoo-sources sys-process/atop sys-process/ctop sys-process/htop sys-process/parallel www-client/links www-client/lynx www-client/w3m x11-misc/xdg-user-dirs x11-misc/xdg-utils x11-misc/xdotool
+```
+
+---
+
+# Gentoo Graphic Interface Packages
+
+```
+app-admin/conky app-admin/doas app-admin/sysklogd app-arch/file-roller lxde-base/lxappearance media-fonts/dejavu media-fonts/fontawesome media-fonts/liberation-fonts media-fonts/noto media-fonts/noto-cjk media-fonts/noto-emoji media-fonts/powerline-symbols media-fonts/source-code-pro media-fonts/terminus-font media-gfx/feh media-gfx/maim media-libs/gstreamer media-libs/libpulse media-libs/mesa media-plugins/alsa-plugins media-sound/alsa-utils media-sound/jack media-sound/pavucontrol media-sound/pulseaudio media-sound/pulseaudio-daemon net-dialup/ppp net-misc/chrony net-misc/dhcpcd net-misc/networkmanager net-wireless/iw net-wireless/iwd net-wireless/wpa_supplicant sys-apps/dbus sys-apps/mlocate sys-apps/net-tools sys-apps/systemd-utils sys-auth/elogind sys-auth/polkit sys-block/io-scheduler-udev-rules sys-boot/grub sys-firmware/nvidia-firmware sys-fs/btrfs-progs sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/jfsutils sys-fs/reiserfsprogs sys-fs/udev-init-scripts sys-fs/xfsprogs sys-fs/zfs sys-process/cronie www-client/firefox-bin x11-apps/xrandr x11-apps/xsetroot x11-base/xorg-drivers x11-base/xorg-server x11-libs/libXinerama x11-misc/arandr x11-misc/dmenu x11-misc/nitrogen x11-misc/pcmanfm x11-misc/picom x11-misc/redshift x11-misc/wmname x11-misc/xclip x11-misc/xsel x11-terms/st x11-terms/xterm x11-themes/arc-icon-theme x11-themes/arc-theme x11-themes/gentoo10-backgrounds x11-themes/gentoo-artwork x11-themes/gentoo-xcursors x11-themes/numix-gtk-theme x11-themes/numix-icon-theme x11-wm/dwm
+```
+
+---
+
+# Filesystem packages
+```bash
+sys-fs/xfsprogs sys-fs/e2fsprogs sys-fs/dosfstools  sys-fs/btrfs-progs sys-fs/zfs sys-fs/jfsutils sys-block/io-scheduler-udev-rules
+```
+
+---
+
+# enable weak password gentoo
+**edit file** `/etc/pam.d/system-auth`
+```
+comment out with # the line from /etc/pam.d/system-auth
+password required pam_passwdqc.so min=8,8,8,8,8 retry=3
+
+and making next one
+to be
+password required pam_unix.so nullok sha512 shadow
+
+instead of
+password required pam_unix.so try_first_pass use_authtok nullok sha512 shadow
+
+made me happy.
+```
+
+---
+
+# grub efi  
+Important If grub-install returns an error like Could not prepare Boot variable: Read-only file system, it may be necessary to remount the efivars special mount as read-write in order to succeed:
+```root #mount -o remount,rw,nosuid,nodev,noexec --types efivarfs efivarfs /sys/firmware/efi/efivars```
+
+---
+
+# Use Flags
+USE="X alsa pulseaudio git -systemd -wayland -gnome -kde -xfce -joystick -dvd -dvdr -cdr -bluray -cups -bluetooth -telemetry -geolocation"
