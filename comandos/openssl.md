@@ -32,6 +32,31 @@ Além disso, é comum usar funções de derivação de chave (como PBKDF2) para 
 
 ---
 
+## Derivar Senhas com PBKDF2
+
+Para usar o OpenSSL para derivar uma chave simétrica a partir de uma senha usando PBKDF2 (Password-Based Key Derivation Function 2), você pode usar o seguinte comando:
+
+```bash
+openssl passwd -6 -salt <salt_value> -in <password_file>
+```
+
+Aqui estão as partes importantes do comando:
+
+-6: Indica o uso do esquema de hash SHA-512.
+-salt <salt_value>: Especifica o valor do salt. Substitua <salt_value> pelo valor real do salt.
+-in <password_file>: Especifica o arquivo contendo a senha. Substitua <password_file> pelo caminho real para o arquivo contendo a senha.
+Este comando gerará uma saída que inclui a string derivada. Por exemplo:
+
+```plaintext
+$6$saltvalue$KZcUrg3lFmA23RW/ZVvdMg2npB43nHNqLYZlM.IFnMtrKvyqL5uQoH3mhzFuy.Xo6QOpxv3E3cExdMN6wh0Ez.
+```
+
+A string gerada inclui informações sobre o esquema de hash, o valor do salt e a chave derivada.
+
+Lembre-se de que o uso de PBKDF2 é útil quando você deseja derivar chaves a partir de senhas para uso em criptografia simétrica, por exemplo, ao usar uma senha para desbloquear uma chave privada ou para derivar chaves para criptografia de arquivos. Certifique-se de escolher um número apropriado de iterações para equilibrar a segurança e o desempenho.
+
+---
+
 ## OpenSSL com Senha
 
 ### Encriptação usando Senha:
@@ -56,6 +81,7 @@ Ao executar esse comando, você será solicitado a inserir uma senha. A senha se
 # Desencriptar usando AES-256-CBC e a mesma senha
 openssl enc -d -aes-256-cbc -in arquivo_cifrado.enc -out arquivo_desencriptado.txt
 ```
+
 Neste exemplo, -d indica desencriptação. Assim como antes, você será solicitado a inserir a mesma senha que foi usada para encriptar o arquivo.
 
 Lembre-se de que a segurança do processo depende da segurança da senha. Escolha senhas fortes e mantenha-as seguras. Além disso, considere utilizar funções de derivação de chave, como PBKDF2, ao encriptar com senhas, para aumentar a segurança do processo.
