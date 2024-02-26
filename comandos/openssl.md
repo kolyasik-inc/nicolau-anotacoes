@@ -1,27 +1,27 @@
 O OpenSSL oferece várias maneiras de gerar chaves simétricas. Aqui estão algumas opções com exemplos:
 
-Gerar uma chave AES de 256 bits (padrão) em formato binário:
+### Gerar uma chave AES de 256 bits (padrão) em formato binário:
 ```bash
 openssl rand -out chave-simetrica.bin 32
 ```
 
 Neste exemplo, 32 representa o número de bytes, e como cada byte é composto por 8 bits, isso gera uma chave AES de 256 bits.
 
-Gerar uma chave AES de 128 bits em formato hexadecimal:
+### Gerar uma chave AES de 128 bits em formato hexadecimal:
 ```bash
 openssl rand -hex 16
 ```
 
 Neste exemplo, 16 representa o número de bytes, gerando uma chave AES de 128 bits.
 
-Gerar uma chave DES de 56 bits em formato binário:
+### Gerar uma chave DES de 56 bits em formato binário:
 ```bash
 openssl rand -des -out chave-des.bin 8
 ```
 
 Neste exemplo, 8 representa o número de bytes, gerando uma chave DES de 56 bits.
 
-Gerar uma chave DES em formato hexadecimal:
+### Gerar uma chave DES em formato hexadecimal:
 ```bash
 openssl rand -des -hex 8
 ```
