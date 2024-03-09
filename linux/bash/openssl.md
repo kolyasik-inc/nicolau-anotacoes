@@ -52,5 +52,26 @@ openssl rsautl -encrypt -pubin -inkey chave-publica.pem -in arquivo-para-cifrar.
 openssl ecparam -name prime256v1 -genkey -noout -out chave-privada.pem
 openssl ec -in chave-privada.pem -pubout -out chave-publica.pem
 ```
-end
+
+---
+
+### Criptografar dados com a chave binária usando AES-256-CBC:
+
+```bash
+echo -n "SeuTextoAqui" | openssl enc -aes-256-cbc -out texto_cifrado.enc -pass file:chave.bin
+```
+
+Este comando criptografa o texto "SeuTextoAqui" usando AES-256-CBC e salva o resultado no arquivo texto_cifrado.enc. A chave é fornecida a partir do arquivo binário chave.bin.
+
+Descriptografar os dados:
+
+```bash
+openssl enc -d -aes-256-cbc -in texto_cifrado.enc -pass file:chave.bin
+```
+
+Este comando descriptografa os dados do arquivo texto_cifrado.enc usando a mesma chave binária do arquivo chave.bin.
+
+---
+
+~end~
 ---
