@@ -1,3 +1,9 @@
+# Conceitos de Boas Praticas
+
+---
+
+## Metodologias
+
 Design Thinking, SCRUM, Kanban e TDD (Desenvolvimento Orientado a Testes) são todas metodologias usadas no campo do desenvolvimento de software, cada uma com sua própria abordagem e foco. Aqui está uma breve visão geral de cada uma:
 
 Design Thinking: Esta é uma abordagem centrada no ser humano para a inovação que se baseia no conjunto de ferramentas do designer para integrar as necessidades das pessoas, as possibilidades da tecnologia e os requisitos para o sucesso nos negócios. Envolve uma série de etapas, incluindo a empatia com os usuários, a definição do problema, a idealização de soluções potenciais, a prototipagem e os testes.
@@ -12,6 +18,8 @@ Cada uma dessas metodologias tem seus próprios pontos fortes e fracos, e a esco
 
 ---
 
+## Real-Time e RESTful
+
 Real-time e RESTful são duas abordagens diferentes para o desenvolvimento de sistemas de software, especialmente aplicativos da web e APIs (Interfaces de Programação de Aplicativos). Aqui está uma explicação sobre cada uma delas:
 
 Real-time: Real-time, ou tempo real, refere-se à capacidade de um sistema de responder a eventos quase que instantaneamente. Em um aplicativo real-time, as atualizações de dados são entregues ao usuário assim que ocorrem, sem atrasos perceptíveis. Isso é essencial para aplicativos como sistemas de mensagens, jogos online, sistemas de rastreamento de veículos em tempo real e sistemas de monitoramento de sensores. O desenvolvimento de aplicativos real-time geralmente envolve tecnologias como WebSockets, que permitem uma comunicação bidirecional entre o cliente e o servidor, e bancos de dados que suportam operações de leitura e gravação em tempo real, como Firebase Realtime Database ou MongoDB Realm.
@@ -22,9 +30,13 @@ Em resumo, enquanto aplicativos real-time são aqueles que fornecem atualizaçõ
 
 ---
 
+## Facade Partition
+
 Fachada de Partição (Facade Partition): Em arquitetura de software, uma fachada (ou façade) é um padrão de design que fornece uma interface simplificada para um conjunto complexo de classes ou subsistemas. Uma fachada de partição poderia ser uma fachada específica que lida com operações relacionadas à partição de dados ou recursos em um sistema. Por exemplo, em um sistema de gerenciamento de arquivos, uma fachada de partição poderia fornecer métodos simplificados para criar, excluir ou redimensionar partições de disco.
 
 ---
+
+## Estilizacao
 
 As regras de estilização, também conhecidas como CSS (Cascading Style Sheets), são um conjunto de instruções que definem a aparência visual de um documento HTML ou XML. As regras de estilização são aplicadas aos elementos HTML usando seletores, propriedades e valores. Aqui estão algumas das regras de estilização mais comuns:
 
@@ -48,6 +60,8 @@ Neste exemplo, a regra de estilização seleciona todos os elementos <h1> e defi
 As regras de estilização podem ser aplicadas a elementos individuais, a classes de elementos ou a todos os elementos de um tipo específico. Elas também podem ser aninhadas, o que significa que uma regra de estilização pode ser aplicada a um elemento apenas se ele estiver dentro de outro elemento específico.
 
 ---
+
+## Abstracao e Relativizacao
 
 Em programação, abstração e relativização são conceitos fundamentais que ajudam a entender e organizar a complexidade dos sistemas de software. Aqui está uma explicação de cada termo no contexto da programação:
 
