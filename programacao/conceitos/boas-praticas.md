@@ -28,6 +28,62 @@ RESTful: REST (Representational State Transfer) é um estilo arquitetural que de
 
 Em resumo, enquanto aplicativos real-time são aqueles que fornecem atualizações em tempo real aos usuários, as APIs RESTful são aquelas que seguem os princípios do estilo arquitetural REST para fornecer uma interface consistente e fácil de usar para acessar e manipular recursos. É importante notar que um aplicativo pode ser tanto real-time quanto RESTful, dependendo dos requisitos do sistema.
 
+### Real-Time
+
+O termo "real-time" em programação refere-se à capacidade de um sistema responder a eventos ou entradas em tempo real, ou seja, imediatamente após sua ocorrência, sem qualquer atraso perceptível. Vou explicar os conceitos relacionados ao "real-time" desde o básico até o avançado:
+
+Entradas e Respostas Imediatas: No nível mais básico, "real-time" significa que o sistema é capaz de receber entradas do usuário ou de algum outro dispositivo e fornecer respostas imediatas, geralmente dentro de milissegundos.
+
+Aplicações em Tempo Real: As aplicações em tempo real são aquelas em que a resposta rápida é crucial. Isso é comum em sistemas de controle industrial, sistemas de monitoramento de saúde, sistemas de processamento de transações financeiras e jogos online, onde qualquer atraso pode levar a consequências negativas.
+
+Concorrência e Paralelismo: Em sistemas em tempo real, é importante lidar eficientemente com tarefas concorrentes e paralelas para garantir que as operações sejam realizadas dentro dos prazos exigidos. Isso pode envolver o uso de threads, processos, ou até mesmo a programação em linguagens específicas para sistemas em tempo real, como Ada.
+
+Tempo Real Duro vs. Tempo Real Suave: Existem duas categorias principais de sistemas em tempo real:
+Tempo Real Duro: São sistemas onde a resposta dentro de um prazo estrito é absolutamente crítica. Qualquer falha em atender a esse prazo é considerada uma falha completa do sistema.
+Tempo Real Suave: São sistemas onde a resposta dentro de um prazo é desejável, mas pequenos atrasos podem ser tolerados sem consequências graves.
+
+Scheduling (Escalonamento) em Tempo Real: Em sistemas operacionais de tempo real, o escalonamento de tarefas é projetado para garantir que as tarefas críticas sejam atendidas dentro dos prazos determinados. Isso pode envolver o uso de algoritmos de escalonamento específicos, como o Rate Monotonic Scheduling (RMS) ou o Earliest Deadline First (EDF).
+
+Reatividade e Responsividade: Em uma aplicação em tempo real, a reatividade e a responsividade são fundamentais. Isso significa que o sistema deve ser capaz de detectar eventos e responder a eles imediatamente, garantindo uma experiência de usuário fluida e sem atrasos perceptíveis.
+
+Sistemas Distribuídos em Tempo Real: Em ambientes distribuídos, onde vários dispositivos ou sistemas colaboram para realizar uma tarefa em tempo real, é crucial garantir que a comunicação e a sincronização entre esses sistemas ocorram de forma eficiente para atender aos requisitos de tempo real.
+
+Em resumo, "real-time" na programação envolve a capacidade de um sistema responder a eventos ou entradas imediatamente, dentro de prazos estritos, e é crucial em uma variedade de aplicações onde a reatividade e a responsividade são essenciais.
+
+### RESTful
+
+REST (Representational State Transfer) é um estilo arquitetural utilizado na criação de serviços web que enfatiza a comunicação entre clientes e servidores de forma simples, escalável e padronizada. Vou explicar os conceitos relacionados ao REST do básico ao avançado:
+
+Recursos (Resources): No REST, tudo é considerado um recurso, que pode ser um objeto, um conjunto de dados ou qualquer outra coisa que possa ser nomeada. Recursos são identificados por URIs (Uniform Resource Identifiers).
+
+Métodos HTTP: O REST utiliza os métodos HTTP padrão, como GET, POST, PUT, DELETE, para realizar operações nos recursos. Cada método possui um significado semântico específico:
+        GET: Obter um recurso.
+        POST: Criar um novo recurso.
+        PUT: Atualizar um recurso existente.
+        DELETE: Excluir um recurso.
+
+Representações: Os recursos são representados em diferentes formatos, como XML, JSON, HTML, entre outros. O formato mais comum é JSON (JavaScript Object Notation), devido à sua simplicidade e facilidade de uso.
+
+Estado do Sistema (Stateless): O REST é um estilo arquitetural stateless, o que significa que cada requisição feita pelo cliente para o servidor deve conter todas as informações necessárias para que o servidor entenda e processe a requisição. O servidor não mantém estado das requisições anteriores do cliente.
+
+Padrões de Navegação: No REST, a navegação entre recursos é feita por meio de hiperlinks, semelhante à web tradicional. Isso permite que os clientes descubram recursos relacionados e naveguem entre eles de forma autônoma.
+
+Operações CRUD: O REST mapeia as operações CRUD (Create, Read, Update, Delete) para os métodos HTTP correspondentes:
+        Create (Criação): POST
+        Read (Leitura): GET
+        Update (Atualização): PUT/PATCH
+        Delete (Exclusão): DELETE
+
+API RESTful: Uma API RESTful é uma API que segue os princípios do REST. Isso significa que ela utiliza URIs para identificar recursos, os métodos HTTP para realizar operações nesses recursos e representa os dados em formato padronizado, como JSON ou XML.
+
+Hypermedia as the Engine of Application State (HATEOAS): Este é um princípio do REST que sugere que o servidor deve fornecer hiperlinks nos recursos retornados para permitir que os clientes descubram e naveguem pelo serviço de forma dinâmica.
+
+Segurança e Autenticação: O REST não especifica mecanismos de segurança ou autenticação. Isso deve ser implementado separadamente, geralmente utilizando protocolos como OAuth ou tokens JWT (JSON Web Tokens).
+
+REST vs. RESTful: O termo "RESTful" é frequentemente usado para descrever sistemas ou serviços que seguem os princípios do REST. "REST" é o estilo arquitetural em si.
+
+Em resumo, o REST é um estilo arquitetural que define um conjunto de princípios para a criação de serviços web simples, escaláveis e interoperáveis. Ele utiliza métodos HTTP, recursos identificados por URIs e representa os dados em formatos padronizados, como JSON ou XML. O RESTful é a aplicação desses princípios na prática.
+
 ---
 
 ## Facade Partition
