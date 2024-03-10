@@ -1,3 +1,5 @@
+# Tabela de Eletronegatividade
+
 | Number | Symbol |    Name    |  use  |  WEL  |  CRC  |  LNG  |
 |---|---|---|---|---|---|---|
 | 1 | H | hydrogen | 2.20 | same |
