@@ -40,7 +40,7 @@ Fachada de Partição (Facade Partition): Em arquitetura de software, uma fachad
 
 As regras de estilização, também conhecidas como CSS (Cascading Style Sheets), são um conjunto de instruções que definem a aparência visual de um documento HTML ou XML. As regras de estilização são aplicadas aos elementos HTML usando seletores, propriedades e valores. Aqui estão algumas das regras de estilização mais comuns:
 
-Seletores: Os seletores são usados para selecionar os elementos HTML aos quais as regras de estilização devem ser aplicadas. Os seletores podem ser simples, como h1 para selecionar todos os elementos <h1>, ou mais complexos, como .classe para selecionar elementos com uma classe específica.
+Seletores: Os seletores são usados para selecionar os elementos HTML aos quais as regras de estilização devem ser aplicadas. Os seletores podem ser simples, como h1 para selecionar todos os elementos \<h1\>, ou mais complexos, como .classe para selecionar elementos com uma classe específica.
 
 Propriedades: As propriedades são os atributos que definem a aparência visual de um elemento HTML. Por exemplo, a propriedade color define a cor do texto, a propriedade font-size define o tamanho da fonte e a propriedade background-color define a cor de fundo.
 
@@ -49,10 +49,12 @@ Valores: Os valores são os valores específicos que são atribuídos às propri
 Aqui está um exemplo de uma regra de estilização simples:
 
 ```css
+
 h1 {
     color: red;
     font-size: 24px;
 }
+
 ```
 
 Neste exemplo, a regra de estilização seleciona todos os elementos <h1> e define a cor do texto como vermelho e o tamanho da fonte como 24 pixels.
