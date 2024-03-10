@@ -1,6 +1,6 @@
 | Number | Symbol |	Name	| use |	WEL |	CRC |	LNG |
 |---|---|---|---|---|---|---|
-1	H	hydrogen	2.20	same
+| 1 |	H |	hydrogen |	2.20 | same | 
 2	He	helium	no data	same
 3	Li	lithium	0.98	same
 4	Be	beryllium	1.57	same
