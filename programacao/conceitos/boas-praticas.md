@@ -49,15 +49,13 @@ Valores: Os valores são os valores específicos que são atribuídos às propri
 Aqui está um exemplo de uma regra de estilização simples:
 
 ```css
-
 h1 {
     color: red;
     font-size: 24px;
 }
-
 ```
 
-Neste exemplo, a regra de estilização seleciona todos os elementos <h1> e define a cor do texto como vermelho e o tamanho da fonte como 24 pixels.
+Neste exemplo, a regra de estilização seleciona todos os elementos \<h1\> e define a cor do texto como vermelho e o tamanho da fonte como 24 pixels.
 
 As regras de estilização podem ser aplicadas a elementos individuais, a classes de elementos ou a todos os elementos de um tipo específico. Elas também podem ser aninhadas, o que significa que uma regra de estilização pode ser aplicada a um elemento apenas se ele estiver dentro de outro elemento específico.
 
