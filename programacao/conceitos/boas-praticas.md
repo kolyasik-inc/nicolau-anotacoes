@@ -92,6 +92,50 @@ Relativização: Relativização em programação refere-se à capacidade de tor
 
 Em resumo, abstração e relativização são conceitos fundamentais em programação que ajudam a simplificar e organizar a complexidade dos sistemas de software. Ambos são usados para criar código mais legível, modular e reutilizável.
 
+### Abstracao
+
+Conceito Básico: Abstração é o processo de simplificar algo complexo, concentrando-se nos aspectos essenciais enquanto oculta os detalhes desnecessários. Em programação, isso significa criar modelos ou representações que descrevem as características importantes de um objeto, sem se preocupar com a implementação detalhada.
+
+Tipos de Abstração:
+
+Abstração de Dados: Foca em representar os dados e as operações que podem ser realizadas neles, sem considerar como essas operações são implementadas.
+
+Abstração de Controle: Foca em descrever o controle ou o fluxo de execução de um programa, abstraindo detalhes de implementação específicos.
+
+Classes e Objetos: Uma das formas mais comuns de abstração em programação orientada a objetos é através de classes e objetos. Uma classe define um tipo de objeto, especificando seus atributos e comportamentos. Os objetos são instâncias dessas classes.
+
+Encapsulamento: O encapsulamento é uma forma de abstração que oculta os detalhes internos de um objeto e expõe apenas as operações que podem ser realizadas nele. Isso é alcançado através da definição de métodos públicos e variáveis de instância privadas dentro de uma classe.
+
+Herança: Herança é um mecanismo que permite que uma classe herde atributos e métodos de outra classe. Isso promove a reutilização de código e ajuda na criação de abstrações hierárquicas.
+
+Polimorfismo: Polimorfismo é a capacidade de objetos de diferentes classes serem tratados de forma uniforme. Isso permite que um único método possa ser usado para manipular objetos de diferentes tipos, desde que esses tipos sejam compatíveis.
+
+Interfaces e Implementações: Em muitas linguagens de programação, a abstração é facilitada pelo uso de interfaces, que definem um conjunto de métodos que uma classe deve implementar. Isso permite que diferentes classes forneçam implementações específicas para o mesmo conjunto de operações.
+
+Abstração de Alto Nível: Em níveis mais avançados, a abstração pode se estender além do código em si, envolvendo a arquitetura de sistemas complexos. Isso envolve a criação de abstrações de alto nível, como padrões de design, arquiteturas de software e estratégias de desenvolvimento.
+
+Design Patterns: Padrões de design são abstrações de soluções para problemas comuns de design de software. Eles fornecem modelos testados e comprovados para resolver problemas recorrentes, promovendo a reutilização de soluções bem-sucedidas.
+
+Abstração na Ciência da Computação: Além da programação, a abstração é um conceito central em muitas outras áreas da ciência da computação, como algoritmos, teoria da computação e sistemas distribuídos, onde ajuda a simplificar problemas complexos e facilitar a compreensão e a resolução de problemas.
+
+### Relativizacao
+
+O termo "relativização" pode ser interpretado de maneiras diferentes em diferentes contextos da programação. Vou abordar algumas interpretações comuns, desde o básico até o avançado:
+
+Variáveis Relativas: No nível mais básico, a relativização pode se referir à manipulação de variáveis em relação a algum ponto de referência. Por exemplo, em programação web, é comum usar caminhos relativos para referenciar arquivos CSS, JavaScript ou imagens em relação ao diretório atual ou ao diretório raiz do projeto.
+
+Escopo de Variáveis: Em um nível um pouco mais avançado, a relativização pode estar relacionada ao escopo das variáveis. Em linguagens de programação como JavaScript, as variáveis podem ser declaradas em diferentes escopos (global, local, de função, etc.), e a relativização pode ser usada para acessar variáveis em relação ao seu escopo atual.
+
+Contexto de Execução: Em linguagens de programação mais avançadas, como JavaScript, onde as funções são cidadãs de primeira classe e podem ser passadas como argumentos ou retornadas de outras funções, a relativização pode ser usada para executar funções em relação a um contexto específico. Isso é comumente chamado de "bind", "apply" ou "call" em JavaScript.
+
+Relativização de Dados e Operações: Em programação funcional, a relativização pode ser usada para tornar funções mais genéricas, permitindo que elas operem em uma variedade de dados ou contextos. Isso é frequentemente feito usando funções de ordem superior, como map, filter e reduce, que aceitam funções como argumentos e as aplicam a cada elemento de uma coleção de dados.
+
+Abstração Relativa: Em um nível mais avançado, a relativização pode estar relacionada à criação de abstrações que são relativas a um contexto ou domínio específico. Isso pode envolver a criação de interfaces ou classes abstratas que definem comportamentos gerais que podem ser especializados em diferentes contextos específicos.
+
+Relativização de Concorrência: Em programação concorrente e paralela, a relativização pode ser usada para coordenar a execução de threads ou processos em relação a um ponto de sincronização comum, como uma barreira ou semáforo.
+
+Em resumo, a relativização na programação pode abranger uma variedade de conceitos, desde a manipulação de variáveis em relação a um contexto específico até a criação de abstrações que são relativas a um domínio ou contexto particular. O entendimento desses conceitos pode variar dependendo da linguagem de programação e do paradigma de programação sendo utilizado.
+
 ---
 
 ## Endpoints
