@@ -48,16 +48,62 @@ Isso criará uma nova imagem Docker chamada minha-nova-imagem a partir do contê
 
 ---
 
-O comando docker volume create é usado para criar um volume Docker. Um volume Docker é um mecanismo de armazenamento persistente que pode ser usado para armazenar dados fora do sistema de arquivos do contêiner, tornando-os persistentes entre execuções de contêineres.
-
-No exemplo que você forneceu, o comando docker volume create nano-persistent-storage cria um volume Docker chamado nano-persistent-storage. Este volume Docker pode então ser montado em um contêiner Docker usando o comando docker run com a opção --mount, como no exemplo anterior.
-
-Por exemplo, suponha que você tenha criado um volume Docker chamado nano-persistent-storage usando o comando docker volume create, e agora você quer montar esse volume em um contêiner Docker chamado persistent-nano:
+Por exemplo, para se conectar ao shell interativo de um contêiner Docker chamado meu-container, você pode usar o seguinte comando:
 
 ```bash
-docker run -it --mount source=nano-persistent-storage,target=C:\KeepMyData --name persistent-nano Microsoft/nanoserver
+docker attach meu-container
 ```
 
-Isso iniciará um contêiner Docker a partir da imagem Microsoft/nanoserver e montará o volume Docker nano-persistent-storage no diretório C:\ \KeepMyData dentro do contêiner. Qualquer dado armazenado no diretório C:\KeepMyData dentro do contêiner será persistido no volume Docker nano-persistent-storage, mesmo depois que o contêiner persistent-nano for parado e removido.
+Isso conectará você ao shell interativo do contêiner meu-container. Você pode então usar o shell interativo para executar comandos dentro do contêiner.
 
-Portanto, o comando docker volume create é usado para criar volumes Docker, e o comando docker run com a opção --mount é usado para montar esses volumes em contêineres Docker. Isso permite que você armazene dados fora do sistema de arquivos do contêiner, tornando-os persistentes entre execuções de contêineres.
+Lembre-se de que, quando você se desconectar do shell interativo dentro do contêiner (digitando exit no shell), o contêiner continuará em execução em segundo plano. Se você quiser parar o contêiner, você pode usar o comando docker stop:
+
+```bash
+docker stop meu-container
+```
+
+Isso irá parar o contêiner meu-container. Se você quiser remover o contêiner, você pode usar o comando docker rm:
+
+```bash
+docker rm meu-container
+```
+
+Isso removerá o contêiner meu-container do seu sistema.
+
+---
+
+## Docker em Mount
+
+Você pode fazer isso adicionando um sinal de igual (=) e o diretório de destino após o nome do volume Docker. Por exemplo:
+
+```bash
+sudo docker run -it --mount source=kali-persistent-storage,target=/diretorio/de/destino --name persistent-kali kalilinux/kali-rolling
+```
+
+Neste exemplo, o volume Docker kali-persistent-storage será montado no diretório /diretorio/de/destino dentro do contêiner persistent-kali.
+
+Se você quiser montar o volume Docker no diretório raiz do contêiner, você pode usar o diretório raiz (/) como o diretório de destino:
+
+```bash
+sudo docker run -it --mount source=kali-persistent-storage,target=/ --name persistent-kali kalilinux/kali-rolling
+```
+
+Isso montará o volume Docker kali-persistent-storage no diretório raiz do contêiner persistent-kali.
+
+Lembre-se de que, quando você remove um contêiner Docker, todos os dados e alterações feitas dentro do contêiner serão perdidos. Se você quiser manter os dados e alterações feitas dentro do contêiner, você pode usar volumes Docker para persistir esses dados e alterações entre execuções de contêineres.
+
+---
+
+## Docker em Volume
+
+Se você não quiser especificar um diretório de destino para o volume Docker que está sendo montado, você pode usar a opção --volume em vez da opção --mount no comando docker run. A opção --volume não requer um diretório de destino e pode ser usada para montar um volume Docker sem especificar um diretório de destino.
+
+Por exemplo, você pode usar o seguinte comando para montar o volume Docker kali-persistent-storage sem especificar um diretório de destino:
+
+```bash
+sudo docker run -it --volume kali-persistent-storage --name persistent-kali kalilinux/kali-rolling
+```
+
+Este comando irá iniciar um novo contêiner Docker com o nome persistent-kali, montando o volume Docker kali-persistent-storage sem especificar um diretório de destino. O contêiner será iniciado a partir da imagem kalilinux/kali-rolling.
+
+Lembre-se de que, quando você remove um contêiner Docker, todos os dados e alterações feitas dentro do contêiner serão perdidos. Se você quiser manter os dados e alterações feitas dentro do contêiner, você pode usar volumes Docker para persistir esses dados e alterações entre execuções de contêineres.
