@@ -1,0 +1,39 @@
+##
+## Arch Linux repository mirrorlist
+## Generated on 2024-03-23
+##
+
+## Brazil
+Server = http://archlinux.c3sl.ufpr.br/$repo/os/$arch
+Server = http://www.caco.ic.unicamp.br/archlinux/$repo/os/$arch
+Server = https://www.caco.ic.unicamp.br/archlinux/$repo/os/$arch
+Server = http://linorg.usp.br/archlinux/$repo/os/$arch
+Server = http://archlinux.pop-es.rnp.br/$repo/os/$arch
+Server = http://mirror.ufam.edu.br/archlinux/$repo/os/$arch
+Server = http://mirror.ufscar.br/archlinux/$repo/os/$arch
+Server = https://mirror.ufscar.br/archlinux/$repo/os/$arch
+
+## Chile
+Server = http://mirror.anquan.cl/archlinux/$repo/os/$arch
+Server = https://mirror.anquan.cl/archlinux/$repo/os/$arch
+Server = http://elmirror.cl/archlinux/$repo/os/$arch
+Server = https://elmirror.cl/archlinux/$repo/os/$arch
+Server = http://mirror.hnd.cl/archlinux/$repo/os/$arch
+Server = https://mirror.hnd.cl/archlinux/$repo/os/$arch
+Server = http://mirror.ufro.cl/archlinux/$repo/os/$arch
+Server = https://mirror.ufro.cl/archlinux/$repo/os/$arch
+
+## Colombia
+Server = http://mirrors.atlas.net.co/archlinux/$repo/os/$arch
+Server = https://mirrors.atlas.net.co/archlinux/$repo/os/$arch
+Server = http://edgeuno-bog2.mm.fcix.net/archlinux/$repo/os/$arch
+Server = https://edgeuno-bog2.mm.fcix.net/archlinux/$repo/os/$arch
+Server = http://mirrors.udenar.edu.co/archlinux/$repo/os/$arch
+
+## Ecuador
+Server = http://mirror.cedia.org.ec/archlinux/$repo/os/$arch
+Server = http://mirror.espoch.edu.ec/archlinux/$repo/os/$arch
+
+## Paraguay
+Server = http://archlinux.mirror.py/archlinux/$repo/os/$arch
+

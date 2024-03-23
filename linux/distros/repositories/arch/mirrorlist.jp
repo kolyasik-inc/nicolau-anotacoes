@@ -1,0 +1,20 @@
+##
+## Arch Linux repository mirrorlist
+## Generated on 2024-03-23
+##
+
+## Japan
+Server = http://mirrors.cat.net/archlinux/$repo/os/$arch
+Server = https://mirrors.cat.net/archlinux/$repo/os/$arch
+Server = http://jp.mirrors.cicku.me/archlinux/$repo/os/$arch
+Server = https://jp.mirrors.cicku.me/archlinux/$repo/os/$arch
+Server = http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/$repo/os/$arch
+Server = http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch
+Server = https://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch
+Server = http://repo.jing.rocks/archlinux/$repo/os/$arch
+Server = https://repo.jing.rocks/archlinux/$repo/os/$arch
+Server = http://mirror.nishi.network/archlinux/$repo/os/$arch
+Server = https://mirror.nishi.network/archlinux/$repo/os/$arch
+Server = https://mirror.saebasol.org/archlinux/$repo/os/$arch
+
+
