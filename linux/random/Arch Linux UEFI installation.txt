@@ -189,7 +189,7 @@ $ sudo vim /etc/lightdm/lightdm.conf
 # search for "greeter-session" uncomment and edit to
 ( greeter-session=lightdm-slick-greeter )
 
-$ pacman -S git clang fpc ffmpeg lynx wget curl transmission-cli neofetch cmatrix the_silver_searcher cmake p7zip bzip2 gzip unrar unzip bzip3 lrzip lz4 lzip lzop xz zstd unarchiver parted tree figlet nano emacs vim tmux vifm parallel atop ctop htop xdotool dos2unix assimp w3m links inetutils aria2 apache axel zenity ctags global grex bat exa dust sd fd tokei procs tealdeer git-delta coreutils util-linux usbutils github-cli meson ninja android-tools inxi ltrace strace gdb bind scanmem rkhunter shellcheck fakeroot fakechroot pactree flatpak yt-dlp 
+$ pacman -S git clang fpc ffmpeg lynx wget curl transmission-cli neofetch cmatrix the_silver_searcher cmake p7zip bzip2 gzip unrar unzip bzip3 lrzip lz4 lzip lzop xz zstd unarchiver parted tree figlet nano emacs vim tmux vifm parallel atop ctop htop xdotool dos2unix assimp w3m links inetutils aria2 apache axel zenity ctags global grex bat exa dust sd fd tokei procs tealdeer git-delta coreutils util-linux usbutils github-cli meson ninja android-tools inxi ltrace strace gdb bind scanmem rkhunter shellcheck fakeroot fakechroot pactree flatpak arch-wiki-docs wikiman rng-tools haveged
 
 $ pacman -S python python-pip go nodejs npm yarn ruby rust kotlin scala crystal erlang elixir php lua perl clisp
 
@@ -218,6 +218,8 @@ $ systemctl enable libvirtd.service
 
 $ systemctl start libvirtd.service virtlogd.service
 
+$ systemctl enable haveged.service
+$  #systemctl enable rngd.service
 
 $ git clone https://aur.archlinux.org/paru-bin.git
 ( or $ git clone https://aur.archlinux.org/yay-bin.git )
@@ -338,7 +340,8 @@ $ sudo pacman -Syu aircrack-ng reaver hashcat hashcat-utils hcxtools hcxkeys hcx
 $ yay -S crunch wordlists metasploit-git mad-metasploit-git social-engineer-toolkit gau git-dumper-git sherlock-git
 
 # python scripts
-pacman -S python-pybullet python-twisted python-tornado python-setuptools python-pytest python-matplotlib python-numpy python-scipy python-keras
+pacman -S python-pybullet python-twisted python-tornado python-setuptools python-pytest python-matplotlib python-numpy python-scipy python-keras yt-dlp
+
 yay -S --noconfirm --sudoloop python-openai gdown python-theano -git
 
 $ sudo vim .config/pip/pip.conf
